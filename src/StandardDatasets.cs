@@ -18,7 +18,7 @@ public static class StandardDatasets
         new("Provincial/ON/Electoral District Shapefile - 2022 General Election/ELECTORAL_DISTRICT.shp", new("ED_ID", "ENGLISH_NA", "FRENCH_NAM"), Jurisdiction.Ontario),
         new("Provincial/NB/Prov_PED_2024.shp", new("DIST_ID", "PED_Name_E", "PED_Name_F"), Jurisdiction.NewBrunswick),
         new("Provincial/NS/NS_2026ED_Bnds.shp", new("ED_NO", "ED_NAME", null), Jurisdiction.NovaScotia),
-        new("Provincial/NL/NL_Provincial_Electoral_Districts.geojson", new("id", "dist_name", null), Jurisdiction.NewfoundlandLabrador),
+        new("Provincial/NL/NL_Provincial_Electoral_Districts.shp", new("id", "dist_name", null), Jurisdiction.NewfoundlandLabrador),
         new("Territorial/NU/EN_FUTURE_NU_Constituencies.shp", new(null, "Name_E", "Name_Fr"), Jurisdiction.Nunavut),
         new("Territorial/NWT/ElectoralDistricts.shp", new(null, "ED", null), Jurisdiction.NorthwestTerritories),
         new("Territorial/YT/Yukon_Electoral_Districts.shp", new(null, "ELECT_NAME", "FR_ELECNAM"), Jurisdiction.Yukon),

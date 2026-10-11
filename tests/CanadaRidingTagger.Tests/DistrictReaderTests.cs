@@ -40,8 +40,7 @@ public class DistrictReaderTests
     public void Shapefile_InverseProjectsThroughPrj()
     {
         string prjText = File.ReadAllText(Path.Combine(
-            RepoRoot, "Shapefiles", "Provincial", "ON",
-            "Electoral District Shapefile - 2022 General Election",
+            RepoRoot, "tests", "CanadaRidingTagger.Tests", "Fixtures", "prj",
             "ELECTORAL_DISTRICT.prj"));
         IProjection proj = ProjectionFactory.Create(prjText);
 

@@ -54,7 +54,7 @@ internal static class ShapefileDatasetReader
         return result;
     }
 
-    private sealed class InverseProjector : GeometryTransformer
+    internal sealed class InverseProjector : GeometryTransformer
     {
         private readonly IProjection _projection;
 

@@ -10,7 +10,6 @@ namespace CanadaRidingTagger;
 public sealed class RidingTagger
 {
     private readonly List<LoadedDataset> _datasets = [];
-    private static readonly GeometryFactory GeometryFactory = new();
 
     /// <summary>
     /// Reads <paramref name="source"/> and adds it to the tagger, building a spatial index over its districts.
@@ -37,19 +36,22 @@ public sealed class RidingTagger
     /// <returns>The matching federal and subnational districts, each <c>null</c> when none is loaded or the point is outside all of them.</returns>
     public RidingResult FindRidings(double latitude, double longitude)
     {
-        var point = GeometryFactory.CreatePoint(new Coordinate(longitude, latitude));
-        var envelope = point.EnvelopeInternal;
+        var envelope = new Envelope(new Coordinate(longitude, latitude));
         District? federal = null, provincial = null;
         Jurisdiction? jurisdiction = null;
 
         foreach (var dataset in _datasets)
         {
+            // First match per dataset wins: districts tile their jurisdiction, so
+            // a point is contained by at most one candidate (except exactly on a
+            // shared boundary, where any answer is defensible).
             foreach (var candidate in dataset.Tree.Query(envelope))
             {
-                if (!candidate.Geometry.Covers(point))
+                if (!PointInGeometry.Contains(longitude, latitude, candidate.Geometry))
                 {
                     continue;
                 }
+
                 if (dataset.Jurisdiction is null)
                 {
                     federal = candidate.District;
@@ -59,6 +61,7 @@ public sealed class RidingTagger
                     provincial = candidate.District;
                     jurisdiction = dataset.Jurisdiction;
                 }
+                break;
             }
         }
 

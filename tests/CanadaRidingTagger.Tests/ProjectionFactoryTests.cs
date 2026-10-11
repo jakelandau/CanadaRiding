@@ -37,8 +37,9 @@ public class ProjectionFactoryTests
 
     private static IProjection Create(string prjRelPath)
     {
-        return ProjectionFactory.Create(
-            File.ReadAllText(Path.Combine(RepoRoot, prjRelPath)));
+        return ProjectionFactory.Create(File.ReadAllText(Path.Combine(
+            RepoRoot, "tests", "CanadaRidingTagger.Tests", "Fixtures", "prj",
+            Path.GetFileName(prjRelPath))));
     }
 
     private static void CheckGrid(IProjection proj, string key)

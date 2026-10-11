@@ -2,7 +2,7 @@
 
 A .NET 10 class library that identifies the Canadian **federal riding** and the
 **province/territory electoral district** containing a WGS84 latitude/longitude,
-from bundled electoral-boundary shapefiles (and one GeoJSON). It is a library —
+from bundled electoral-boundary shapefiles. It is a library —
 call it from any program; it is not an executable.
 
 ## Public API
@@ -76,7 +76,7 @@ the Ontario shapefile live under nested directories.
 | Ontario | `Provincial/ON/Electoral District Shapefile - 2022 General Election/ELECTORAL_DISTRICT.shp` | `ED_ID` | `ENGLISH_NA` | `FRENCH_NAM` |
 | New Brunswick | `Provincial/NB/Prov_PED_2024.shp` | `DIST_ID` | `PED_Name_E` | `PED_Name_F` |
 | Nova Scotia | `Provincial/NS/NS_2026ED_Bnds.shp` | `ED_NO` | `ED_NAME` | — |
-| Newfoundland and Labrador | `Provincial/NL/NL_Provincial_Electoral_Districts.geojson` | `id` | `dist_name` | — |
+| Newfoundland and Labrador | `Provincial/NL/NL_Provincial_Electoral_Districts.shp` | `id` | `dist_name` | — |
 | Nunavut | `Territorial/NU/EN_FUTURE_NU_Constituencies.shp` | — | `Name_E` | `Name_Fr` |
 | Northwest Territories | `Territorial/NWT/ElectoralDistricts.shp` | — | `ED` | — |
 | Yukon | `Territorial/YT/Yukon_Electoral_Districts.shp` | — | `ELECT_NAME` | `FR_ELECNAM` |
@@ -86,8 +86,7 @@ the Ontario shapefile live under nested directories.
 Notes:
 - The three territories (Nunavut, Northwest Territories, Yukon) have no numeric
   id field, so their `District.Id` is derived from the English name.
-- Newfoundland and Labrador is a **GeoJSON** file; every other dataset is an ESRI
-  shapefile. The reader is selected by file extension.
+- All bundled datasets are ESRI shapefiles; the reader is selected by file extension.
 - The Quebec shapefile directory name contains an accented `é`
   (`circonscriptions_électorales_2026_shapefile`) — keep it as-is when copying data.
 
