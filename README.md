@@ -104,4 +104,5 @@ Notes:
 ```
 dotnet build CanadaRidingTagger.csproj
 dotnet test CanadaRidingTagger.sln
+dotnet pack CanadaRidingTagger.csproj -c Release
 ```
