@@ -1,0 +1,5 @@
+kind=shapefile
+fields=['EDNUM', 'EDNAMEEN', 'EDNAMEFR', 'VANUM']
+records=2371
+districts=57
+projected=True

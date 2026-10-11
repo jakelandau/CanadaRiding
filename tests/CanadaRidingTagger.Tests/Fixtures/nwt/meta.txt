@@ -1,0 +1,5 @@
+kind=shapefile
+fields=['ED', 'nonYK', 'ElectoralY', 'Shape_STAr', 'Shape_STLe']
+records=19
+districts=19
+projected=True

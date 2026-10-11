@@ -1,0 +1,5 @@
+kind=shapefile
+fields=['ELECT_NAME', 'FR_ELECNAM']
+records=21
+districts=21
+projected=True

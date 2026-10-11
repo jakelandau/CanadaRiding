@@ -1,0 +1,9 @@
+bin
+obj
+.vs/
+
+m*.user
+.tmp_*
+tmp_dl
+maps_mb.html
+maps_sk.html

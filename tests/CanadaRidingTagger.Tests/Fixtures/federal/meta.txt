@@ -1,0 +1,5 @@
+kind=shapefile
+fields=['FED_NUM', 'ED_NAMEE', 'ED_NAMEF', 'REPORDER', 'SHAPE_Leng', 'SHAPE_Area']
+records=352
+districts=343
+projected=True

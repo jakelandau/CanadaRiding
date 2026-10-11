@@ -1,0 +1,5 @@
+kind=shapefile
+fields=['Constituen', 'Constitu_1', 'Constitu_2', 'Shape_Leng', 'Shape_Area']
+records=61
+districts=61
+projected=True
