@@ -1,4 +1,5 @@
 using CanadaRidingTagger;
+using CanadaRidingTagger.Readers;
 using Xunit;
 
 namespace CanadaRidingTagger.Tests;
@@ -128,9 +129,32 @@ public class RidingTaggerTests
 
     // --- integration: all datasets, no cross-jurisdiction bleed ----------
 
+    [Fact]
+    public void Load_AllStandardDatasets_EachYieldsDistricts()
+    {
+        var sources = StandardDatasets.All(DataRoot);
+        Assert.Equal(14, sources.Count);
+        foreach (var source in sources)
+        {
+            var districts = DistrictReader.Read(source);
+            Assert.True(districts.Count > 0, $"Dataset for {source.Jurisdiction?.ToString() ?? "Federal"} yielded zero districts");
+        }
+    }
+
     [Theory]
     [InlineData(Jurisdiction.Ontario, 43.6975888422089, -79.72916262149215, "Brampton Centre")]
     [InlineData(Jurisdiction.BritishColumbia, 49.191682470734634, -122.83697226163719, "Surrey City Centre")]
+    [InlineData(Jurisdiction.Alberta, 49.68854339828085, -112.87923898609279, "Lethbridge-West")]
+    [InlineData(Jurisdiction.Manitoba, 49.81450315251009, -97.09417236572575, "Seine River")]
+    [InlineData(Jurisdiction.Saskatchewan, 57.07439241934494, -107.50384957529023, "Athabasca")]
+    [InlineData(Jurisdiction.NewBrunswick, 47.687915592451176, -67.07800918215372, "Restigouche West")]
+    [InlineData(Jurisdiction.NovaScotia, 44.78013593300412, -65.27046160871136, "Annapolis")]
+    [InlineData(Jurisdiction.NewfoundlandLabrador, 49.75059168972005, -56.053686829989, "Baie Verte - Green Bay")]
+    [InlineData(Jurisdiction.Nunavut, 62.53217122449641, -72.48632431028307, "SOUTH BAFFIN")]
+    [InlineData(Jurisdiction.NorthwestTerritories, 64.46718976688705, -116.24999999973872, "Monfwi")]
+    [InlineData(Jurisdiction.Yukon, 60.77768005685998, -135.0991000759725, "Whistle Bend South")]
+    [InlineData(Jurisdiction.PEI, 46.08125536161161, -62.74483107031237, "Belfast - Murray River")]
+    [InlineData(Jurisdiction.Quebec, 45.49280435374364, -73.4001782306937, "Vachon")]
     public void FindRidings_AllDatasets_MatchGroundTruth(Jurisdiction jurisdiction, double lat, double lon, string expectedName)
     {
         var tagger = new RidingTagger();

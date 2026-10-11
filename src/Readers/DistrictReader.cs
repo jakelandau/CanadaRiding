@@ -1,5 +1,3 @@
-using CanadaRidingTagger;
-
 namespace CanadaRidingTagger.Readers;
 
 /// <summary>

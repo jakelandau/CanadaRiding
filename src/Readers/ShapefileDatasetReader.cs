@@ -1,7 +1,6 @@
 using System.Text;
 using CanadaRidingTagger;
 using CanadaRidingTagger.Projections;
-using NetTopologySuite.Features;
 using NetTopologySuite.Geometries;
 using NetTopologySuite.Geometries.Utilities;
 using NetTopologySuite.IO;
