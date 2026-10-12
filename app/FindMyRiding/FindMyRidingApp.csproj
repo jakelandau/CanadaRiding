@@ -18,6 +18,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="harness/**" />
+    <Compile Remove="tools/**" />
     <ProjectReference Include="..\..\lib\CanadaRidingTagger\CanadaRidingTagger.csproj" />
     <PackageReference Include="Microsoft.Maui.Controls" Version="10.0.*" />
   </ItemGroup>
