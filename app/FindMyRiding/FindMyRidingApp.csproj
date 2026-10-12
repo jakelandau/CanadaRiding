@@ -17,18 +17,29 @@
     <RunLinker>false</RunLinker>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <AndroidPackageFormat>apk</AndroidPackageFormat>
+    <AndroidUseAapt2>False</AndroidUseAapt2>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <AndroidUseAapt2>False</AndroidUseAapt2>
+  </PropertyGroup>
+
   <ItemGroup>
     <Compile Remove="harness/**" />
     <Compile Remove="tools/**" />
     <ProjectReference Include="..\..\lib\CanadaRidingTagger\CanadaRidingTagger.csproj" />
-    <PackageReference Include="Microsoft.Maui.Controls" Version="10.0.*" />
+    <PackageReference Include="Microsoft.Maui.Controls" Version="10.0.110" />
   </ItemGroup>
 
   <ItemGroup>
-    <!-- All shapefiles except the QC one (its source dir name contains a non-ASCII é that AAPT2 cannot open on Windows). -->
-    <AndroidAsset Include="..\..\data\Shapefiles\**" Exclude="..\..\data\Shapefiles\Provincial\QC\circonscriptions_électorales_2026_shapefile\**;..\..\data\Shapefiles\*.kml" Link="Shapefiles\%(RecursiveDir)%(Filename)%(Extension)" />
+    <!-- All shapefiles except the QC one (its source dir name contains a non-ASCII é that AAPT2 cannot open on Windows).
+         The app reads only the .shp/.dbf/.shx sidecars per dataset (see StandardDatasets), so source archives,
+         duplicate KML/GeoJSON encodings, and metadata documents under data/Shapefiles are excluded to keep the APK small. -->
+    <AndroidAsset Include="..\..\data\Shapefiles\**" Exclude="..\..\data\Shapefiles\Provincial\QC\circonscriptions_électorales_2026_shapefile\**;..\..\data\Shapefiles\**\*.kml;..\..\data\Shapefiles\**\*.zip;..\..\data\Shapefiles\**\*.geojson;..\..\data\Shapefiles\**\*.pdf;..\..\data\Shapefiles\**\*.docx;..\..\data\Shapefiles\**\*.sbn;..\..\data\Shapefiles\**\*.sbx;..\..\data\Shapefiles\**\*.xml" Link="Shapefiles\%(RecursiveDir)%(Filename)%(Extension)" />
     <!-- QC shapefiles, linked under an ASCII directory name; renamed back to the é path at runtime (see RidingData). -->
-    <AndroidAsset Include="..\..\data\Shapefiles\Provincial\QC\circonscriptions_électorales_2026_shapefile\**" Link="Shapefiles\Provincial\QC\qc_electorales_ascii\%(RecursiveDir)%(Filename)%(Extension)" />
+    <AndroidAsset Include="..\..\data\Shapefiles\Provincial\QC\circonscriptions_électorales_2026_shapefile\**" Exclude="..\..\data\Shapefiles\Provincial\QC\circonscriptions_électorales_2026_shapefile\**\*.kml;..\..\data\Shapefiles\Provincial\QC\circonscriptions_électorales_2026_shapefile\**\*.zip;..\..\data\Shapefiles\Provincial\QC\circonscriptions_électorales_2026_shapefile\**\*.geojson;..\..\data\Shapefiles\Provincial\QC\circonscriptions_électorales_2026_shapefile\**\*.pdf;..\..\data\Shapefiles\Provincial\QC\circonscriptions_électorales_2026_shapefile\**\*.docx;..\..\data\Shapefiles\Provincial\QC\circonscriptions_électorales_2026_shapefile\**\*.sbn;..\..\data\Shapefiles\Provincial\QC\circonscriptions_électorales_2026_shapefile\**\*.sbx;..\..\data\Shapefiles\Provincial\QC\circonscriptions_électorales_2026_shapefile\**\*.xml" Link="Shapefiles\Provincial\QC\qc_electorales_ascii\%(RecursiveDir)%(Filename)%(Extension)" />
     <AndroidResource Include="Platforms\Android\Resources\**" Link="%(RecursiveDir)%(Filename)%(Extension)" />
   </ItemGroup>
 
