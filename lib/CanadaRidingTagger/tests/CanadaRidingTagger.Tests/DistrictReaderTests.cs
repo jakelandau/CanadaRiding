@@ -17,22 +17,7 @@ namespace CanadaRidingTagger.Tests;
 public class DistrictReaderTests
 {
     private const double DegreeTolerance = 1e-6;
-    private static readonly string RepoRoot = FindRepoRoot();
-
-    private static string FindRepoRoot()
-    {
-        string? dir = AppContext.BaseDirectory;
-        while (dir is not null)
-        {
-            if (Directory.Exists(Path.Combine(dir,
-                    "Shapefiles", "Federal", "SHP")))
-            {
-                return dir;
-            }
-            dir = Path.GetDirectoryName(dir);
-        }
-        throw new InvalidOperationException("Repo root not found");
-    }
+    private static readonly string FixturesRoot = LccFixtureTests.FindFixturesRoot();
 
     // --- shapefile -------------------------------------------------------
 
@@ -40,7 +25,7 @@ public class DistrictReaderTests
     public void Shapefile_InverseProjectsThroughPrj()
     {
         string prjText = File.ReadAllText(Path.Combine(
-            RepoRoot, "tests", "CanadaRidingTagger.Tests", "Fixtures", "prj",
+            FixturesRoot, "prj",
             "ELECTORAL_DISTRICT.prj"));
         IProjection proj = ProjectionFactory.Create(prjText);
 
