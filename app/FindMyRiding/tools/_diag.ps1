@@ -1,4 +1,4 @@
-$adb = "D:\documents\GitHub\FindMyRiding\tools\platform-tools\adb.exe"
+$adb = "D:\documents\GitHub\CanadaRiding\app\FindMyRiding\tools\platform-tools\adb.exe"
 Write-Host "waiting 110s for extraction + loading..."
 Start-Sleep -Seconds 110
 Write-Host "=== FMR logcat ==="

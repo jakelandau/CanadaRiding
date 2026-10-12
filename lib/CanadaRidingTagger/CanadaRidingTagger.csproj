@@ -30,9 +30,9 @@
 
   <ItemGroup>
     <None Include="README.md" Pack="true" PackagePath="\" />
-    <Content Include="Shapefiles\Federal\**\*" Pack="true" PackageCopyToOutput="true" PackagePath="contentFiles\any\any\Shapefiles\Federal" />
-    <Content Include="Shapefiles\Provincial\**\*" Pack="true" PackageCopyToOutput="true" PackagePath="contentFiles\any\any\Shapefiles\Provincial" />
-    <Content Include="Shapefiles\Territorial\**\*" Pack="true" PackageCopyToOutput="true" PackagePath="contentFiles\any\any\Shapefiles\Territorial" />
+    <Content Include="..\..\data\Shapefiles\Federal\**\*" Pack="true" PackageCopyToOutput="true" PackagePath="contentFiles\any\any\Shapefiles\Federal" />
+    <Content Include="..\..\data\Shapefiles\Provincial\**\*" Pack="true" PackageCopyToOutput="true" PackagePath="contentFiles\any\any\Shapefiles\Provincial" />
+    <Content Include="..\..\data\Shapefiles\Territorial\**\*" Pack="true" PackageCopyToOutput="true" PackagePath="contentFiles\any\any\Shapefiles\Territorial" />
   </ItemGroup>
 
 </Project>

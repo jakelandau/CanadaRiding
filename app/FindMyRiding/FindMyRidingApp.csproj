@@ -18,15 +18,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="CanadaRidingTagger" Version="0.1.0" />
+    <ProjectReference Include="..\..\lib\CanadaRidingTagger\CanadaRidingTagger.csproj" />
     <PackageReference Include="Microsoft.Maui.Controls" Version="10.0.*" />
   </ItemGroup>
 
   <ItemGroup>
     <!-- All shapefiles except the QC one (its source dir name contains a non-ASCII é that AAPT2 cannot open on Windows). -->
-    <AndroidAsset Include="..\data\Shapefiles\**" Exclude="..\data\Shapefiles\Provincial\QC\circonscriptions_électorales_2026_shapefile\**" Link="Shapefiles\%(RecursiveDir)%(Filename)%(Extension)" />
+    <AndroidAsset Include="..\..\data\Shapefiles\**" Exclude="..\..\data\Shapefiles\Provincial\QC\circonscriptions_électorales_2026_shapefile\**;..\..\data\Shapefiles\*.kml" Link="Shapefiles\%(RecursiveDir)%(Filename)%(Extension)" />
     <!-- QC shapefiles, linked under an ASCII directory name; renamed back to the é path at runtime (see RidingData). -->
-    <AndroidAsset Include="..\data\Shapefiles\Provincial\QC\circonscriptions_électorales_2026_shapefile\**" Link="Shapefiles\Provincial\QC\qc_electorales_ascii\%(RecursiveDir)%(Filename)%(Extension)" />
+    <AndroidAsset Include="..\..\data\Shapefiles\Provincial\QC\circonscriptions_électorales_2026_shapefile\**" Link="Shapefiles\Provincial\QC\qc_electorales_ascii\%(RecursiveDir)%(Filename)%(Extension)" />
     <AndroidResource Include="Platforms\Android\Resources\**" Link="%(RecursiveDir)%(Filename)%(Extension)" />
   </ItemGroup>
 

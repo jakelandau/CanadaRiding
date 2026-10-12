@@ -1,0 +1,17 @@
+<Solution>
+  <Folder Name="/app/" />
+  <Folder Name="/app/FindMyRiding/">
+    <Project Path="app/FindMyRiding/FindMyRidingApp.csproj" />
+    <Project Path="app/FindMyRiding/harness/harness.csproj" />
+  </Folder>
+  <Folder Name="/lib/">
+    <Project Path="lib/CanadaRidingTagger/CanadaRidingTagger.csproj" />
+  </Folder>
+  <Folder Name="/lib/CanadaRidingTagger/" />
+  <Folder Name="/lib/CanadaRidingTagger/tests/">
+    <Project Path="lib/CanadaRidingTagger/tests/CanadaRidingTagger.Tests/CanadaRidingTagger.Tests.csproj" />
+  </Folder>
+  <Folder Name="/lib/CanadaRidingTagger/tools/">
+    <Project Path="lib/CanadaRidingTagger/tools/Preproject/Preproject.csproj" />
+  </Folder>
+</Solution>

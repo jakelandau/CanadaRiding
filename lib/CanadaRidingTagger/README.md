@@ -95,13 +95,18 @@ Notes:
   `CanadaRidingTagger`; projection math lives in `CanadaRidingTagger.Projections`
   (internal) and format readers in `CanadaRidingTagger.Readers` (internal).
 - `tests/CanadaRidingTagger.Tests/` — unit + integration tests.
-- `Shapefiles/` — the bundled datasets (see table above).
+- The bundled datasets live at the monorepo root, in `data/Shapefiles/`
+  (see the table above); the package ships them under
+  `contentFiles/any/any/Shapefiles/`.
 - `tools/` — development scripts: `gen_fixtures.py` (regenerates the test
   fixture CSVs), `ridingparser.py` (legacy KML parser), and diagnostic helpers.
 
 ## Build
+
+From the monorepo root:
+
 ```
-dotnet build CanadaRidingTagger.csproj
-dotnet test CanadaRidingTagger.sln
-dotnet pack CanadaRidingTagger.csproj -c Release
+dotnet build lib/CanadaRidingTagger/CanadaRidingTagger.csproj
+dotnet test lib/CanadaRidingTagger/CanadaRidingTagger.sln
+dotnet pack lib/CanadaRidingTagger/CanadaRidingTagger.csproj -c Release
 ```

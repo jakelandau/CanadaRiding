@@ -1,6 +1,6 @@
 using CanadaRidingTagger;
 
-string dataRoot = args.Length > 0 ? args[0] : Path.Combine(AppContext.BaseDirectory, "..", "..", "..", "..", "data", "Shapefiles");
+string dataRoot = args.Length > 0 ? args[0] : Path.Combine(AppContext.BaseDirectory, "..", "..", "..", "..", "..", "..", "data", "Shapefiles");
 // Default coordinate = the goal's test point (Ottawa). Pass "<dataRoot> <lat> <lon>" to query another point.
 double lat = 45.4215, lon = -75.6972;
 bool query = false;

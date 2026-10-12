@@ -12,14 +12,15 @@ namespace CanadaRidingTagger.Tests;
 public class RidingTaggerTests
 {
     private static readonly string RepoRoot = FindRepoRoot();
-    private static readonly string DataRoot = Path.Combine(RepoRoot, "Shapefiles");
+    private static readonly string DataRoot = Path.Combine(RepoRoot, "data", "Shapefiles");
 
     private static string FindRepoRoot()
     {
         string? dir = AppContext.BaseDirectory;
         while (dir is not null)
         {
-            if (Directory.Exists(Path.Combine(dir, "Shapefiles", "Federal", "SHP")))
+            if (Directory.Exists(Path.Combine(dir, "lib", "CanadaRidingTagger")) &&
+                Directory.Exists(Path.Combine(dir, "data", "Shapefiles", "Federal", "SHP")))
             {
                 return dir;
             }

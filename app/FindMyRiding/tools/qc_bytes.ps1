@@ -1,4 +1,4 @@
-$dirs = Get-ChildItem 'D:/documents/GitHub/FindMyRiding/data/Shapefiles/Provincial/QC' -Directory
+$dirs = Get-ChildItem 'D:/documents/GitHub/CanadaRiding/data/Shapefiles/Provincial/QC' -Directory
 foreach ($d in $dirs) {
     $n = $d.Name
     $bytes = [System.Text.Encoding]::UTF8.GetBytes($n)

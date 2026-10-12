@@ -18,27 +18,11 @@ public class ProjectionFactoryTests
     private const double RoundTripRad = 1e-8;
 
     private static readonly string FixturesRoot = LccFixtureTests.FindFixturesRoot();
-    private static readonly string RepoRoot = FindRepoRoot();
-
-    private static string FindRepoRoot()
-    {
-        string? dir = AppContext.BaseDirectory;
-        while (dir is not null)
-        {
-            if (Directory.Exists(Path.Combine(dir,
-                    "Shapefiles", "Federal", "SHP")))
-            {
-                return dir;
-            }
-            dir = Path.GetDirectoryName(dir);
-        }
-        throw new InvalidOperationException("Repo root not found");
-    }
 
     private static IProjection Create(string prjRelPath)
     {
         return ProjectionFactory.Create(File.ReadAllText(Path.Combine(
-            RepoRoot, "tests", "CanadaRidingTagger.Tests", "Fixtures", "prj",
+            FixturesRoot, "prj",
             Path.GetFileName(prjRelPath))));
     }
 
