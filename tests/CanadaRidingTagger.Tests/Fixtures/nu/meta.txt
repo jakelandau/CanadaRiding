@@ -1,0 +1,5 @@
+kind=shapefile
+fields=['Loc', 'Name_I', 'Name_Fr', 'Name_Inu', 'Shape_Leng', 'Shape_Area', 'Name_E']
+records=22
+districts=22
+projected=False

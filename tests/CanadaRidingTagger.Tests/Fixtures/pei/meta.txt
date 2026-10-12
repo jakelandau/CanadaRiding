@@ -1,0 +1,5 @@
+kind=shapefile
+fields=['FID', 'OBJECTID', 'DIST_NO', 'DISTRICT', 'Shape_Leng', 'Shape_Area', 'Shape__Are', 'Shape__Len']
+records=27
+districts=27
+projected=True

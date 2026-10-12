@@ -1,0 +1,5 @@
+kind=shapefile
+fields=['ED_NO', 'ED_NAME', 'Release_Da', 'electorcou', 'Shape_Leng', 'Shape_Area']
+records=57
+districts=56
+projected=True

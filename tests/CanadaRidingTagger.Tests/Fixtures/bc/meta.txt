@@ -1,0 +1,5 @@
+kind=shapefile
+fields=['ED_ID', 'BDYSET_ID', 'ED_ABBREV', 'ED_NAME', 'GAZETTE_DT', 'AREA_SQM', 'LENGTH_M', 'SHAPE', 'OBJECTID']
+records=93
+districts=93
+projected=False

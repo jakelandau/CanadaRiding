@@ -1,0 +1,5 @@
+kind=shapefile
+fields=['CO_CEP', 'NM_CEP', 'NMTRI_CEP']
+records=127
+districts=127
+projected=True

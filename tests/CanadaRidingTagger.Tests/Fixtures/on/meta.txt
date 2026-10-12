@@ -1,0 +1,5 @@
+kind=shapefile
+fields=['ED_ID', 'ENGLISH_NA', 'FRENCH_NAM', 'Shape_Leng', 'Shape_Area']
+records=124
+districts=124
+projected=True

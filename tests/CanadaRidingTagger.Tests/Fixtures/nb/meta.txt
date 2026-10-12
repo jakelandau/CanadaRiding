@@ -1,0 +1,5 @@
+kind=shapefile
+fields=['DIST_ID', 'PED_Name_E', 'PED_Name_F', 'PED_Names_', 'MLA_Name', 'Shape_Leng', 'Shape_Area']
+records=49
+districts=49
+projected=True

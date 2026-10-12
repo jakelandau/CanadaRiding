@@ -1,0 +1,5 @@
+kind=shapefile
+fields=['EDNumber20', 'EDName2017', 'Km2', 'Hectares', 'Acres', 'Authority', 'Shape_Leng', 'Shape_Area']
+records=87
+districts=87
+projected=True

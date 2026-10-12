@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <Version>0.1.0</Version>
+    <Description>Identifies the Canadian federal riding and province/territory electoral district containing a WGS84 latitude/longitude, from bundled electoral-boundary shapefiles.</Description>
+    <Authors>Jake Landau</Authors>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="tests/**" />
+    <Compile Remove="tools/**" />
+  </ItemGroup>
+  <ItemGroup>
+    <InternalsVisibleTo Include="CanadaRidingTagger.Tests" />
+    <InternalsVisibleTo Include="Preproject" />
+    <InternalsVisibleTo Include="ProfileBench" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NetTopologySuite" Version="2.6.0" />
+    <PackageReference Include="NetTopologySuite.IO.GeoJSON" Version="4.0.0" />
+    <PackageReference Include="NetTopologySuite.IO.ShapeFile" Version="2.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="\" />
+    <Content Include="Shapefiles\Federal\**\*" Pack="true" PackageCopyToOutput="true" PackagePath="contentFiles\any\any\Shapefiles\Federal" />
+    <Content Include="Shapefiles\Provincial\**\*" Pack="true" PackageCopyToOutput="true" PackagePath="contentFiles\any\any\Shapefiles\Provincial" />
+    <Content Include="Shapefiles\Territorial\**\*" Pack="true" PackageCopyToOutput="true" PackagePath="contentFiles\any\any\Shapefiles\Territorial" />
+  </ItemGroup>
+
+</Project>
