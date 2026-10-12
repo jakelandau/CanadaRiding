@@ -68,22 +68,29 @@ Only the files the app reads are shipped as assets: per dataset it opens
 |---|---|
 | Release, all assets (before) | 148,057,202 B (~148 MB) |
 | Release, asset exclusions (after) | 78,423,690 B (~78 MB) |
+| Release, asset exclusions + AOT (final) | 81,961,057 B (~82 MB) |
 
 Shapefiles make up ~62 MB of the resulting APK (14 datasets, `.shp`/`.dbf`/`.shx`/
   `.cpg`); the rest is the runtime, dex, and resources.
 
 ## AOT and trimming
 
-- `RunAOTCompilation=false` is honored: no AOT runs (`PublishAot` is empty).
-- `RunLinker=false` is a no-op on .NET 10: managed-assembly trimming is
-  controlled by `PublishTrimmed`, which defaults to **true** on Release
-  publishes, so ILLink runs (`--trim-mode link`). Measured on clean builds:
-  trimmed 78,423,690 B vs untrimmed 98,174,602 B — trimming saves
-  19,750,912 B (~19.75 MB). To actually disable it, set
-  `<PublishTrimmed>false</PublishTrimmed>`; to make the current behavior
-  explicit, set `<PublishTrimmed>true</PublishTrimmed>` and drop `RunLinker`.
-- `lib/arm64-v8a/libassembly-store.so` in the APK is the Mono runtime's
-  assembly container, not AOT output.
+- Release enables AOT (`RunAOTCompilation=true` under `Release|AnyCPU`;
+  Debug stays off). All 106 managed assemblies ship as
+  `lib/arm64-v8a/libaot-*.dll.so` natives alongside the Mono runtime; the
+  interpreted fallback (`libassembly-store.so` + dex) is kept for
+  reflection safety. Measured on clean builds: AOT adds 3,537,367 B
+  (~3.5 MB) over the interpreted Release APK (78,423,690 vs 81,961,057 B
+  signed).
+- AOT requires trimming: the build fails with XA1030 if
+  `PublishTrimmed=false`, so the Release APK is always ILLink-trimmed.
+  (`RunLinker=false` in the csproj is a retired no-op on .NET 10; the real
+  switch is `PublishTrimmed`, auto-true here.) Interpreted (AOT-off)
+  builds measured 78,423,690 B trimmed vs 98,174,602 B untrimmed —
+  trimming saves 19,750,912 B (~19.75 MB) in that configuration.
+- AOT + trimming can break reflection-based MAUI behavior; after changing
+  either setting, test on a real device (launch, dataset extraction,
+  point query).
 
 ## Data
 
