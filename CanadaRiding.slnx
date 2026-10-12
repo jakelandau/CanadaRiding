@@ -7,11 +7,10 @@
   <Folder Name="/lib/">
     <Project Path="lib/CanadaRidingTagger/CanadaRidingTagger.csproj" />
   </Folder>
-  <Folder Name="/lib/CanadaRidingTagger/" />
-  <Folder Name="/lib/CanadaRidingTagger/tests/">
+  <Folder Name="/tests/">
     <Project Path="lib/CanadaRidingTagger/tests/CanadaRidingTagger.Tests/CanadaRidingTagger.Tests.csproj" />
   </Folder>
-  <Folder Name="/lib/CanadaRidingTagger/tools/">
+  <Folder Name="/tools/">
     <Project Path="lib/CanadaRidingTagger/tools/Preproject/Preproject.csproj" />
   </Folder>
 </Solution>
