@@ -1,0 +1,18 @@
+# Build output
+bin/
+obj/
+
+# NuGet package binaries (120MB each; exceeds GitHub's 100MB hard limit).
+# packages/ is the local feed used by NuGet.config — keep the file on disk,
+# out of git. The copy at repo root is a duplicate of packages/.
+*.nupkg
+
+# Downloaded / extracted tooling (re-downloadable, not source)
+tools/workloads_extract/
+tools/platform-tools/
+tools/workloads.zip
+
+# IDE / OS cruft
+.vs/
+.idea/
+*.user

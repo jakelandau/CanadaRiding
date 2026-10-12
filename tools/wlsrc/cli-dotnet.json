@@ -1,0 +1,898 @@
+[
+  {
+    "name": "AspNetCoreCertificateGenerator.cs",
+    "path": "src/Cli/dotnet/AspNetCoreCertificateGenerator.cs",
+    "sha": "85a22b37c08298daef80dce25084c54667fe7a0f",
+    "size": 515,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/AspNetCoreCertificateGenerator.cs?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/AspNetCoreCertificateGenerator.cs",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/blobs/85a22b37c08298daef80dce25084c54667fe7a0f",
+    "download_url": "https://raw.githubusercontent.com/dotnet/sdk/v10.0.100/src/Cli/dotnet/AspNetCoreCertificateGenerator.cs",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/AspNetCoreCertificateGenerator.cs?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/blobs/85a22b37c08298daef80dce25084c54667fe7a0f",
+      "html": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/AspNetCoreCertificateGenerator.cs"
+    }
+  },
+  {
+    "name": "AutomaticEncodingRestorer.cs",
+    "path": "src/Cli/dotnet/AutomaticEncodingRestorer.cs",
+    "sha": "5a1fbeb8b3d4ffaca7de4031782193218e64fcb4",
+    "size": 2213,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/AutomaticEncodingRestorer.cs?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/AutomaticEncodingRestorer.cs",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/blobs/5a1fbeb8b3d4ffaca7de4031782193218e64fcb4",
+    "download_url": "https://raw.githubusercontent.com/dotnet/sdk/v10.0.100/src/Cli/dotnet/AutomaticEncodingRestorer.cs",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/AutomaticEncodingRestorer.cs?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/blobs/5a1fbeb8b3d4ffaca7de4031782193218e64fcb4",
+      "html": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/AutomaticEncodingRestorer.cs"
+    }
+  },
+  {
+    "name": "BuildServer",
+    "path": "src/Cli/dotnet/BuildServer",
+    "sha": "e5dd8ba0f02e59035059d913436966ed2bd70f39",
+    "size": 0,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/BuildServer?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/tree/v10.0.100/src/Cli/dotnet/BuildServer",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/trees/e5dd8ba0f02e59035059d913436966ed2bd70f39",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/BuildServer?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/trees/e5dd8ba0f02e59035059d913436966ed2bd70f39",
+      "html": "https://github.com/dotnet/sdk/tree/v10.0.100/src/Cli/dotnet/BuildServer"
+    }
+  },
+  {
+    "name": "BundledTargetFramework.cs",
+    "path": "src/Cli/dotnet/BundledTargetFramework.cs",
+    "sha": "cdde41eb7bafad2fc2779a0490dc5e5682d10c80",
+    "size": 713,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/BundledTargetFramework.cs?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/BundledTargetFramework.cs",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/blobs/cdde41eb7bafad2fc2779a0490dc5e5682d10c80",
+    "download_url": "https://raw.githubusercontent.com/dotnet/sdk/v10.0.100/src/Cli/dotnet/BundledTargetFramework.cs",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/BundledTargetFramework.cs?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/blobs/cdde41eb7bafad2fc2779a0490dc5e5682d10c80",
+      "html": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/BundledTargetFramework.cs"
+    }
+  },
+  {
+    "name": "CliCompletion.cs",
+    "path": "src/Cli/dotnet/CliCompletion.cs",
+    "sha": "6f3f930bda97aeb49eb09371839e6ecc17702049",
+    "size": 2395,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/CliCompletion.cs?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/CliCompletion.cs",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/blobs/6f3f930bda97aeb49eb09371839e6ecc17702049",
+    "download_url": "https://raw.githubusercontent.com/dotnet/sdk/v10.0.100/src/Cli/dotnet/CliCompletion.cs",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/CliCompletion.cs?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/blobs/6f3f930bda97aeb49eb09371839e6ecc17702049",
+      "html": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/CliCompletion.cs"
+    }
+  },
+  {
+    "name": "CliSchema.cs",
+    "path": "src/Cli/dotnet/CliSchema.cs",
+    "sha": "67c816116a92361ddfa82c7db8c9ba24e4fadc2f",
+    "size": 8962,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/CliSchema.cs?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/CliSchema.cs",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/blobs/67c816116a92361ddfa82c7db8c9ba24e4fadc2f",
+    "download_url": "https://raw.githubusercontent.com/dotnet/sdk/v10.0.100/src/Cli/dotnet/CliSchema.cs",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/CliSchema.cs?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/blobs/67c816116a92361ddfa82c7db8c9ba24e4fadc2f",
+      "html": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/CliSchema.cs"
+    }
+  },
+  {
+    "name": "CliStrings.resx",
+    "path": "src/Cli/dotnet/CliStrings.resx",
+    "sha": "bd4864527b9c62fd385770b8835950aefc29a3af",
+    "size": 39512,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/CliStrings.resx?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/CliStrings.resx",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/blobs/bd4864527b9c62fd385770b8835950aefc29a3af",
+    "download_url": "https://raw.githubusercontent.com/dotnet/sdk/v10.0.100/src/Cli/dotnet/CliStrings.resx",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/CliStrings.resx?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/blobs/bd4864527b9c62fd385770b8835950aefc29a3af",
+      "html": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/CliStrings.resx"
+    }
+  },
+  {
+    "name": "CliTransaction.cs",
+    "path": "src/Cli/dotnet/CliTransaction.cs",
+    "sha": "ac970de9717ef49fc7e2d8e50e535b6ac8c6dc8d",
+    "size": 3172,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/CliTransaction.cs?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/CliTransaction.cs",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/blobs/ac970de9717ef49fc7e2d8e50e535b6ac8c6dc8d",
+    "download_url": "https://raw.githubusercontent.com/dotnet/sdk/v10.0.100/src/Cli/dotnet/CliTransaction.cs",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/CliTransaction.cs?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/blobs/ac970de9717ef49fc7e2d8e50e535b6ac8c6dc8d",
+      "html": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/CliTransaction.cs"
+    }
+  },
+  {
+    "name": "CliUsage.cs",
+    "path": "src/Cli/dotnet/CliUsage.cs",
+    "sha": "8e0870a86e84568b2c393e8a0576a4dd3a299bdd",
+    "size": 3151,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/CliUsage.cs?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/CliUsage.cs",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/blobs/8e0870a86e84568b2c393e8a0576a4dd3a299bdd",
+    "download_url": "https://raw.githubusercontent.com/dotnet/sdk/v10.0.100/src/Cli/dotnet/CliUsage.cs",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/CliUsage.cs?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/blobs/8e0870a86e84568b2c393e8a0576a4dd3a299bdd",
+      "html": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/CliUsage.cs"
+    }
+  },
+  {
+    "name": "CommandBase.cs",
+    "path": "src/Cli/dotnet/CommandBase.cs",
+    "sha": "c397c79b3229a2ac1d4a262b6734dd77489be144",
+    "size": 703,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/CommandBase.cs?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/CommandBase.cs",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/blobs/c397c79b3229a2ac1d4a262b6734dd77489be144",
+    "download_url": "https://raw.githubusercontent.com/dotnet/sdk/v10.0.100/src/Cli/dotnet/CommandBase.cs",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/CommandBase.cs?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/blobs/c397c79b3229a2ac1d4a262b6734dd77489be144",
+      "html": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/CommandBase.cs"
+    }
+  },
+  {
+    "name": "CommandDirectoryContext.cs",
+    "path": "src/Cli/dotnet/CommandDirectoryContext.cs",
+    "sha": "c6ee090336873b01a8ab5a44bebbb226524dac7c",
+    "size": 1698,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/CommandDirectoryContext.cs?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/CommandDirectoryContext.cs",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/blobs/c6ee090336873b01a8ab5a44bebbb226524dac7c",
+    "download_url": "https://raw.githubusercontent.com/dotnet/sdk/v10.0.100/src/Cli/dotnet/CommandDirectoryContext.cs",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/CommandDirectoryContext.cs?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/blobs/c6ee090336873b01a8ab5a44bebbb226524dac7c",
+      "html": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/CommandDirectoryContext.cs"
+    }
+  },
+  {
+    "name": "CommandFactory",
+    "path": "src/Cli/dotnet/CommandFactory",
+    "sha": "279f72a1e51362e7606093d6e1a4856bce9536c5",
+    "size": 0,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/CommandFactory?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/tree/v10.0.100/src/Cli/dotnet/CommandFactory",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/trees/279f72a1e51362e7606093d6e1a4856bce9536c5",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/CommandFactory?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/trees/279f72a1e51362e7606093d6e1a4856bce9536c5",
+      "html": "https://github.com/dotnet/sdk/tree/v10.0.100/src/Cli/dotnet/CommandFactory"
+    }
+  },
+  {
+    "name": "CommandLineInfo.cs",
+    "path": "src/Cli/dotnet/CommandLineInfo.cs",
+    "sha": "84f0b4ba1effca8f275ed63f6e16b80b5fbe81f9",
+    "size": 2556,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/CommandLineInfo.cs?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/CommandLineInfo.cs",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/blobs/84f0b4ba1effca8f275ed63f6e16b80b5fbe81f9",
+    "download_url": "https://raw.githubusercontent.com/dotnet/sdk/v10.0.100/src/Cli/dotnet/CommandLineInfo.cs",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/CommandLineInfo.cs?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/blobs/84f0b4ba1effca8f275ed63f6e16b80b5fbe81f9",
+      "html": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/CommandLineInfo.cs"
+    }
+  },
+  {
+    "name": "CommandParsingException.cs",
+    "path": "src/Cli/dotnet/CommandParsingException.cs",
+    "sha": "f932b55aefb67054940e6e5eec2512b2229da7ca",
+    "size": 531,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/CommandParsingException.cs?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/CommandParsingException.cs",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/blobs/f932b55aefb67054940e6e5eec2512b2229da7ca",
+    "download_url": "https://raw.githubusercontent.com/dotnet/sdk/v10.0.100/src/Cli/dotnet/CommandParsingException.cs",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/CommandParsingException.cs?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/blobs/f932b55aefb67054940e6e5eec2512b2229da7ca",
+      "html": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/CommandParsingException.cs"
+    }
+  },
+  {
+    "name": "Commands",
+    "path": "src/Cli/dotnet/Commands",
+    "sha": "1b2980f5035dc593604ee82ae8e810e2b69fe3d5",
+    "size": 0,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/Commands?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/tree/v10.0.100/src/Cli/dotnet/Commands",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/trees/1b2980f5035dc593604ee82ae8e810e2b69fe3d5",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/Commands?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/trees/1b2980f5035dc593604ee82ae8e810e2b69fe3d5",
+      "html": "https://github.com/dotnet/sdk/tree/v10.0.100/src/Cli/dotnet/Commands"
+    }
+  },
+  {
+    "name": "CommonArguments.cs",
+    "path": "src/Cli/dotnet/CommonArguments.cs",
+    "sha": "bef42994416f3d4918105ed500a002962b99c487",
+    "size": 3123,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/CommonArguments.cs?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/CommonArguments.cs",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/blobs/bef42994416f3d4918105ed500a002962b99c487",
+    "download_url": "https://raw.githubusercontent.com/dotnet/sdk/v10.0.100/src/Cli/dotnet/CommonArguments.cs",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/CommonArguments.cs?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/blobs/bef42994416f3d4918105ed500a002962b99c487",
+      "html": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/CommonArguments.cs"
+    }
+  },
+  {
+    "name": "CommonOptions.cs",
+    "path": "src/Cli/dotnet/CommonOptions.cs",
+    "sha": "aa1730a23525c119126583e728ff2e0fd63e9ce6",
+    "size": 22882,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/CommonOptions.cs?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/CommonOptions.cs",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/blobs/aa1730a23525c119126583e728ff2e0fd63e9ce6",
+    "download_url": "https://raw.githubusercontent.com/dotnet/sdk/v10.0.100/src/Cli/dotnet/CommonOptions.cs",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/CommonOptions.cs?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/blobs/aa1730a23525c119126583e728ff2e0fd63e9ce6",
+      "html": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/CommonOptions.cs"
+    }
+  },
+  {
+    "name": "CommonOptionsFactory.cs",
+    "path": "src/Cli/dotnet/CommonOptionsFactory.cs",
+    "sha": "f776cd47712a7450e4c3b20a375555a4584259fd",
+    "size": 669,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/CommonOptionsFactory.cs?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/CommonOptionsFactory.cs",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/blobs/f776cd47712a7450e4c3b20a375555a4584259fd",
+    "download_url": "https://raw.githubusercontent.com/dotnet/sdk/v10.0.100/src/Cli/dotnet/CommonOptionsFactory.cs",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/CommonOptionsFactory.cs?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/blobs/f776cd47712a7450e4c3b20a375555a4584259fd",
+      "html": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/CommonOptionsFactory.cs"
+    }
+  },
+  {
+    "name": "DocumentedCommand.cs",
+    "path": "src/Cli/dotnet/DocumentedCommand.cs",
+    "sha": "658170628e89ed12331660cac821c4f52bbab758",
+    "size": 452,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/DocumentedCommand.cs?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/DocumentedCommand.cs",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/blobs/658170628e89ed12331660cac821c4f52bbab758",
+    "download_url": "https://raw.githubusercontent.com/dotnet/sdk/v10.0.100/src/Cli/dotnet/DocumentedCommand.cs",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/DocumentedCommand.cs?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/blobs/658170628e89ed12331660cac821c4f52bbab758",
+      "html": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/DocumentedCommand.cs"
+    }
+  },
+  {
+    "name": "DotNetCommandFactory.cs",
+    "path": "src/Cli/dotnet/DotNetCommandFactory.cs",
+    "sha": "ea5eb912e8f6f5bd92b0e8cad6fe46b6fff36c2d",
+    "size": 1818,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/DotNetCommandFactory.cs?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/DotNetCommandFactory.cs",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/blobs/ea5eb912e8f6f5bd92b0e8cad6fe46b6fff36c2d",
+    "download_url": "https://raw.githubusercontent.com/dotnet/sdk/v10.0.100/src/Cli/dotnet/DotNetCommandFactory.cs",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/DotNetCommandFactory.cs?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/blobs/ea5eb912e8f6f5bd92b0e8cad6fe46b6fff36c2d",
+      "html": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/DotNetCommandFactory.cs"
+    }
+  },
+  {
+    "name": "Extensions",
+    "path": "src/Cli/dotnet/Extensions",
+    "sha": "03c367ab31d1263199f77486dce3c58e1a9f34b9",
+    "size": 0,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/Extensions?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/tree/v10.0.100/src/Cli/dotnet/Extensions",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/trees/03c367ab31d1263199f77486dce3c58e1a9f34b9",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/Extensions?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/trees/03c367ab31d1263199f77486dce3c58e1a9f34b9",
+      "html": "https://github.com/dotnet/sdk/tree/v10.0.100/src/Cli/dotnet/Extensions"
+    }
+  },
+  {
+    "name": "FilePermissionSetter.cs",
+    "path": "src/Cli/dotnet/FilePermissionSetter.cs",
+    "sha": "4b1ee8216b233016a8ce07b18852dcf91c13a764",
+    "size": 1279,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/FilePermissionSetter.cs?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/FilePermissionSetter.cs",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/blobs/4b1ee8216b233016a8ce07b18852dcf91c13a764",
+    "download_url": "https://raw.githubusercontent.com/dotnet/sdk/v10.0.100/src/Cli/dotnet/FilePermissionSetter.cs",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/FilePermissionSetter.cs?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/blobs/4b1ee8216b233016a8ce07b18852dcf91c13a764",
+      "html": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/FilePermissionSetter.cs"
+    }
+  },
+  {
+    "name": "ForwardingApp.cs",
+    "path": "src/Cli/dotnet/ForwardingApp.cs",
+    "sha": "e0382f781d35b8ddf391e1294a28ab1110d834e5",
+    "size": 1182,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/ForwardingApp.cs?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/ForwardingApp.cs",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/blobs/e0382f781d35b8ddf391e1294a28ab1110d834e5",
+    "download_url": "https://raw.githubusercontent.com/dotnet/sdk/v10.0.100/src/Cli/dotnet/ForwardingApp.cs",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/ForwardingApp.cs?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/blobs/e0382f781d35b8ddf391e1294a28ab1110d834e5",
+      "html": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/ForwardingApp.cs"
+    }
+  },
+  {
+    "name": "ICommandRunner.cs",
+    "path": "src/Cli/dotnet/ICommandRunner.cs",
+    "sha": "1f88b750a8bab5f4677cf6501360ce2e95f801b8",
+    "size": 264,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/ICommandRunner.cs?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/ICommandRunner.cs",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/blobs/1f88b750a8bab5f4677cf6501360ce2e95f801b8",
+    "download_url": "https://raw.githubusercontent.com/dotnet/sdk/v10.0.100/src/Cli/dotnet/ICommandRunner.cs",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/ICommandRunner.cs?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/blobs/1f88b750a8bab5f4677cf6501360ce2e95f801b8",
+      "html": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/ICommandRunner.cs"
+    }
+  },
+  {
+    "name": "IFilePermissionSetter.cs",
+    "path": "src/Cli/dotnet/IFilePermissionSetter.cs",
+    "sha": "17909ffc54de84443b60b004c7a00e77257e0ee9",
+    "size": 347,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/IFilePermissionSetter.cs?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/IFilePermissionSetter.cs",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/blobs/17909ffc54de84443b60b004c7a00e77257e0ee9",
+    "download_url": "https://raw.githubusercontent.com/dotnet/sdk/v10.0.100/src/Cli/dotnet/IFilePermissionSetter.cs",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/IFilePermissionSetter.cs?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/blobs/17909ffc54de84443b60b004c7a00e77257e0ee9",
+      "html": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/IFilePermissionSetter.cs"
+    }
+  },
+  {
+    "name": "Installer",
+    "path": "src/Cli/dotnet/Installer",
+    "sha": "ccf9d67a65c5d7e1d38ead79e2e992cf3d99b5d4",
+    "size": 0,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/Installer?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/tree/v10.0.100/src/Cli/dotnet/Installer",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/trees/ccf9d67a65c5d7e1d38ead79e2e992cf3d99b5d4",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/Installer?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/trees/ccf9d67a65c5d7e1d38ead79e2e992cf3d99b5d4",
+      "html": "https://github.com/dotnet/sdk/tree/v10.0.100/src/Cli/dotnet/Installer"
+    }
+  },
+  {
+    "name": "InteractiveConsole.cs",
+    "path": "src/Cli/dotnet/InteractiveConsole.cs",
+    "sha": "2b6a6fdcbd58a0cd13b50dad0eb827b0532e14dd",
+    "size": 3605,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/InteractiveConsole.cs?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/InteractiveConsole.cs",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/blobs/2b6a6fdcbd58a0cd13b50dad0eb827b0532e14dd",
+    "download_url": "https://raw.githubusercontent.com/dotnet/sdk/v10.0.100/src/Cli/dotnet/InteractiveConsole.cs",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/InteractiveConsole.cs?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/blobs/2b6a6fdcbd58a0cd13b50dad0eb827b0532e14dd",
+      "html": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/InteractiveConsole.cs"
+    }
+  },
+  {
+    "name": "LoggerUtility.cs",
+    "path": "src/Cli/dotnet/LoggerUtility.cs",
+    "sha": "0210c47c02f5884fe281620f93ca9f8f6dd2e575",
+    "size": 6144,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/LoggerUtility.cs?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/LoggerUtility.cs",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/blobs/0210c47c02f5884fe281620f93ca9f8f6dd2e575",
+    "download_url": "https://raw.githubusercontent.com/dotnet/sdk/v10.0.100/src/Cli/dotnet/LoggerUtility.cs",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/LoggerUtility.cs?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/blobs/0210c47c02f5884fe281620f93ca9f8f6dd2e575",
+      "html": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/LoggerUtility.cs"
+    }
+  },
+  {
+    "name": "MsbuildProject.cs",
+    "path": "src/Cli/dotnet/MsbuildProject.cs",
+    "sha": "d06880e00e7698033e2a96e8451057ea54d7d9ec",
+    "size": 10106,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/MsbuildProject.cs?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/MsbuildProject.cs",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/blobs/d06880e00e7698033e2a96e8451057ea54d7d9ec",
+    "download_url": "https://raw.githubusercontent.com/dotnet/sdk/v10.0.100/src/Cli/dotnet/MsbuildProject.cs",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/MsbuildProject.cs?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/blobs/d06880e00e7698033e2a96e8451057ea54d7d9ec",
+      "html": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/MsbuildProject.cs"
+    }
+  },
+  {
+    "name": "NativeMethods.txt",
+    "path": "src/Cli/dotnet/NativeMethods.txt",
+    "sha": "867a30f6f65950e9d93ed8e09642542a7a8e6115",
+    "size": 346,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/NativeMethods.txt?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/NativeMethods.txt",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/blobs/867a30f6f65950e9d93ed8e09642542a7a8e6115",
+    "download_url": "https://raw.githubusercontent.com/dotnet/sdk/v10.0.100/src/Cli/dotnet/NativeMethods.txt",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/NativeMethods.txt?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/blobs/867a30f6f65950e9d93ed8e09642542a7a8e6115",
+      "html": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/NativeMethods.txt"
+    }
+  },
+  {
+    "name": "NuGetForwardingApp.cs",
+    "path": "src/Cli/dotnet/NuGetForwardingApp.cs",
+    "sha": "a8e99477dccf2e5d6806949b33157707c226737a",
+    "size": 1239,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/NuGetForwardingApp.cs?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/NuGetForwardingApp.cs",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/blobs/a8e99477dccf2e5d6806949b33157707c226737a",
+    "download_url": "https://raw.githubusercontent.com/dotnet/sdk/v10.0.100/src/Cli/dotnet/NuGetForwardingApp.cs",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/NuGetForwardingApp.cs?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/blobs/a8e99477dccf2e5d6806949b33157707c226737a",
+      "html": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/NuGetForwardingApp.cs"
+    }
+  },
+  {
+    "name": "NuGetSignatureVerificationEnabler.cs",
+    "path": "src/Cli/dotnet/NuGetSignatureVerificationEnabler.cs",
+    "sha": "dcf54e505a92e996b04f33dacdbd990a8b4a445f",
+    "size": 1922,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/NuGetSignatureVerificationEnabler.cs?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/NuGetSignatureVerificationEnabler.cs",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/blobs/dcf54e505a92e996b04f33dacdbd990a8b4a445f",
+    "download_url": "https://raw.githubusercontent.com/dotnet/sdk/v10.0.100/src/Cli/dotnet/NuGetSignatureVerificationEnabler.cs",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/NuGetSignatureVerificationEnabler.cs?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/blobs/dcf54e505a92e996b04f33dacdbd990a8b4a445f",
+      "html": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/NuGetSignatureVerificationEnabler.cs"
+    }
+  },
+  {
+    "name": "NugetPackageDownloader",
+    "path": "src/Cli/dotnet/NugetPackageDownloader",
+    "sha": "86b025c4532aa54d087548b6c25338457ed188c4",
+    "size": 0,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/NugetPackageDownloader?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/tree/v10.0.100/src/Cli/dotnet/NugetPackageDownloader",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/trees/86b025c4532aa54d087548b6c25338457ed188c4",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/NugetPackageDownloader?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/trees/86b025c4532aa54d087548b6c25338457ed188c4",
+      "html": "https://github.com/dotnet/sdk/tree/v10.0.100/src/Cli/dotnet/NugetPackageDownloader"
+    }
+  },
+  {
+    "name": "NugetSearch",
+    "path": "src/Cli/dotnet/NugetSearch",
+    "sha": "83914962f34d375744a77a263b9bbb8b3b6b3a8e",
+    "size": 0,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/NugetSearch?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/tree/v10.0.100/src/Cli/dotnet/NugetSearch",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/trees/83914962f34d375744a77a263b9bbb8b3b6b3a8e",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/NugetSearch?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/trees/83914962f34d375744a77a263b9bbb8b3b6b3a8e",
+      "html": "https://github.com/dotnet/sdk/tree/v10.0.100/src/Cli/dotnet/NugetSearch"
+    }
+  },
+  {
+    "name": "Parser.cs",
+    "path": "src/Cli/dotnet/Parser.cs",
+    "sha": "23dd3d6ebef350ff2d1d0cfd91296fcdd6df751c",
+    "size": 17148,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/Parser.cs?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/Parser.cs",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/blobs/23dd3d6ebef350ff2d1d0cfd91296fcdd6df751c",
+    "download_url": "https://raw.githubusercontent.com/dotnet/sdk/v10.0.100/src/Cli/dotnet/Parser.cs",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/Parser.cs?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/blobs/23dd3d6ebef350ff2d1d0cfd91296fcdd6df751c",
+      "html": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/Parser.cs"
+    }
+  },
+  {
+    "name": "PerformanceLogEventListener.cs",
+    "path": "src/Cli/dotnet/PerformanceLogEventListener.cs",
+    "sha": "201006e5c0117056d85c5306a9417b19d30bf220",
+    "size": 5145,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/PerformanceLogEventListener.cs?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/PerformanceLogEventListener.cs",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/blobs/201006e5c0117056d85c5306a9417b19d30bf220",
+    "download_url": "https://raw.githubusercontent.com/dotnet/sdk/v10.0.100/src/Cli/dotnet/PerformanceLogEventListener.cs",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/PerformanceLogEventListener.cs?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/blobs/201006e5c0117056d85c5306a9417b19d30bf220",
+      "html": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/PerformanceLogEventListener.cs"
+    }
+  },
+  {
+    "name": "PerformanceLogEventSource.cs",
+    "path": "src/Cli/dotnet/PerformanceLogEventSource.cs",
+    "sha": "0879b02f17258ca5c081d6a80177ed51e9525cbb",
+    "size": 12315,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/PerformanceLogEventSource.cs?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/PerformanceLogEventSource.cs",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/blobs/0879b02f17258ca5c081d6a80177ed51e9525cbb",
+    "download_url": "https://raw.githubusercontent.com/dotnet/sdk/v10.0.100/src/Cli/dotnet/PerformanceLogEventSource.cs",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/PerformanceLogEventSource.cs?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/blobs/0879b02f17258ca5c081d6a80177ed51e9525cbb",
+      "html": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/PerformanceLogEventSource.cs"
+    }
+  },
+  {
+    "name": "PerformanceLogManager.cs",
+    "path": "src/Cli/dotnet/PerformanceLogManager.cs",
+    "sha": "3864adceb84ce27912127936f7d1013584c84ac7",
+    "size": 4371,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/PerformanceLogManager.cs?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/PerformanceLogManager.cs",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/blobs/3864adceb84ce27912127936f7d1013584c84ac7",
+    "download_url": "https://raw.githubusercontent.com/dotnet/sdk/v10.0.100/src/Cli/dotnet/PerformanceLogManager.cs",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/PerformanceLogManager.cs?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/blobs/3864adceb84ce27912127936f7d1013584c84ac7",
+      "html": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/PerformanceLogManager.cs"
+    }
+  },
+  {
+    "name": "PrintableTable.cs",
+    "path": "src/Cli/dotnet/PrintableTable.cs",
+    "sha": "72f042aeb139355330fcca768a0c1b8e42e72c4f",
+    "size": 5853,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/PrintableTable.cs?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/PrintableTable.cs",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/blobs/72f042aeb139355330fcca768a0c1b8e42e72c4f",
+    "download_url": "https://raw.githubusercontent.com/dotnet/sdk/v10.0.100/src/Cli/dotnet/PrintableTable.cs",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/PrintableTable.cs?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/blobs/72f042aeb139355330fcca768a0c1b8e42e72c4f",
+      "html": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/PrintableTable.cs"
+    }
+  },
+  {
+    "name": "Program.cs",
+    "path": "src/Cli/dotnet/Program.cs",
+    "sha": "e57fe3a5635f875453bb6a2ad0969a100a7866bd",
+    "size": 18553,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/Program.cs?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/Program.cs",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/blobs/e57fe3a5635f875453bb6a2ad0969a100a7866bd",
+    "download_url": "https://raw.githubusercontent.com/dotnet/sdk/v10.0.100/src/Cli/dotnet/Program.cs",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/Program.cs?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/blobs/e57fe3a5635f875453bb6a2ad0969a100a7866bd",
+      "html": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/Program.cs"
+    }
+  },
+  {
+    "name": "Properties",
+    "path": "src/Cli/dotnet/Properties",
+    "sha": "656343843d10b6bb04fc0153efa1d3defac57c3d",
+    "size": 0,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/Properties?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/tree/v10.0.100/src/Cli/dotnet/Properties",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/trees/656343843d10b6bb04fc0153efa1d3defac57c3d",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/Properties?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/trees/656343843d10b6bb04fc0153efa1d3defac57c3d",
+      "html": "https://github.com/dotnet/sdk/tree/v10.0.100/src/Cli/dotnet/Properties"
+    }
+  },
+  {
+    "name": "README.md",
+    "path": "src/Cli/dotnet/README.md",
+    "sha": "5d8d6bb80127c914fab8d5adcfb1629b8e72be17",
+    "size": 2795,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/README.md?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/README.md",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/blobs/5d8d6bb80127c914fab8d5adcfb1629b8e72be17",
+    "download_url": "https://raw.githubusercontent.com/dotnet/sdk/v10.0.100/src/Cli/dotnet/README.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/README.md?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/blobs/5d8d6bb80127c914fab8d5adcfb1629b8e72be17",
+      "html": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/README.md"
+    }
+  },
+  {
+    "name": "ReleasePropertyProjectLocator.cs",
+    "path": "src/Cli/dotnet/ReleasePropertyProjectLocator.cs",
+    "sha": "e85fb9878d4cb31941dba12c1a94e2b56f367f11",
+    "size": 16008,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/ReleasePropertyProjectLocator.cs?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/ReleasePropertyProjectLocator.cs",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/blobs/e85fb9878d4cb31941dba12c1a94e2b56f367f11",
+    "download_url": "https://raw.githubusercontent.com/dotnet/sdk/v10.0.100/src/Cli/dotnet/ReleasePropertyProjectLocator.cs",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/ReleasePropertyProjectLocator.cs?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/blobs/e85fb9878d4cb31941dba12c1a94e2b56f367f11",
+      "html": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/ReleasePropertyProjectLocator.cs"
+    }
+  },
+  {
+    "name": "RuntimeConfig.cs",
+    "path": "src/Cli/dotnet/RuntimeConfig.cs",
+    "sha": "654b30831dda79cb5c92489381b9f132eda51d1a",
+    "size": 2255,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/RuntimeConfig.cs?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/RuntimeConfig.cs",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/blobs/654b30831dda79cb5c92489381b9f132eda51d1a",
+    "download_url": "https://raw.githubusercontent.com/dotnet/sdk/v10.0.100/src/Cli/dotnet/RuntimeConfig.cs",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/RuntimeConfig.cs?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/blobs/654b30831dda79cb5c92489381b9f132eda51d1a",
+      "html": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/RuntimeConfig.cs"
+    }
+  },
+  {
+    "name": "RuntimeConfigFramework.cs",
+    "path": "src/Cli/dotnet/RuntimeConfigFramework.cs",
+    "sha": "e538b21c411c12d4189d65abd6666796fdba9189",
+    "size": 309,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/RuntimeConfigFramework.cs?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/RuntimeConfigFramework.cs",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/blobs/e538b21c411c12d4189d65abd6666796fdba9189",
+    "download_url": "https://raw.githubusercontent.com/dotnet/sdk/v10.0.100/src/Cli/dotnet/RuntimeConfigFramework.cs",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/RuntimeConfigFramework.cs?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/blobs/e538b21c411c12d4189d65abd6666796fdba9189",
+      "html": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/RuntimeConfigFramework.cs"
+    }
+  },
+  {
+    "name": "ShellShim",
+    "path": "src/Cli/dotnet/ShellShim",
+    "sha": "1ed7db1e8594652758a003582e5faac232235a25",
+    "size": 0,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/ShellShim?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/tree/v10.0.100/src/Cli/dotnet/ShellShim",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/trees/1ed7db1e8594652758a003582e5faac232235a25",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/ShellShim?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/trees/1ed7db1e8594652758a003582e5faac232235a25",
+      "html": "https://github.com/dotnet/sdk/tree/v10.0.100/src/Cli/dotnet/ShellShim"
+    }
+  },
+  {
+    "name": "SlnFileFactory.cs",
+    "path": "src/Cli/dotnet/SlnFileFactory.cs",
+    "sha": "788752df3cff9e134a5f6968909fa9213709e94a",
+    "size": 5699,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/SlnFileFactory.cs?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/SlnFileFactory.cs",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/blobs/788752df3cff9e134a5f6968909fa9213709e94a",
+    "download_url": "https://raw.githubusercontent.com/dotnet/sdk/v10.0.100/src/Cli/dotnet/SlnFileFactory.cs",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/SlnFileFactory.cs?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/blobs/788752df3cff9e134a5f6968909fa9213709e94a",
+      "html": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/SlnFileFactory.cs"
+    }
+  },
+  {
+    "name": "StatInterop.cs",
+    "path": "src/Cli/dotnet/StatInterop.cs",
+    "sha": "c95d5236276464a51b9abab4681990c6490f72aa",
+    "size": 2022,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/StatInterop.cs?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/StatInterop.cs",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/blobs/c95d5236276464a51b9abab4681990c6490f72aa",
+    "download_url": "https://raw.githubusercontent.com/dotnet/sdk/v10.0.100/src/Cli/dotnet/StatInterop.cs",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/StatInterop.cs?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/blobs/c95d5236276464a51b9abab4681990c6490f72aa",
+      "html": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/StatInterop.cs"
+    }
+  },
+  {
+    "name": "SudoEnvironmentDirectoryOverride.cs",
+    "path": "src/Cli/dotnet/SudoEnvironmentDirectoryOverride.cs",
+    "sha": "63806a620830bda3f20d0d60874bafdf0a6e4996",
+    "size": 3515,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/SudoEnvironmentDirectoryOverride.cs?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/SudoEnvironmentDirectoryOverride.cs",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/blobs/63806a620830bda3f20d0d60874bafdf0a6e4996",
+    "download_url": "https://raw.githubusercontent.com/dotnet/sdk/v10.0.100/src/Cli/dotnet/SudoEnvironmentDirectoryOverride.cs",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/SudoEnvironmentDirectoryOverride.cs?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/blobs/63806a620830bda3f20d0d60874bafdf0a6e4996",
+      "html": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/SudoEnvironmentDirectoryOverride.cs"
+    }
+  },
+  {
+    "name": "Telemetry",
+    "path": "src/Cli/dotnet/Telemetry",
+    "sha": "4d7754483bd152615bbab4a43f99b79e44d84406",
+    "size": 0,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/Telemetry?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/tree/v10.0.100/src/Cli/dotnet/Telemetry",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/trees/4d7754483bd152615bbab4a43f99b79e44d84406",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/Telemetry?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/trees/4d7754483bd152615bbab4a43f99b79e44d84406",
+      "html": "https://github.com/dotnet/sdk/tree/v10.0.100/src/Cli/dotnet/Telemetry"
+    }
+  },
+  {
+    "name": "ToolManifest",
+    "path": "src/Cli/dotnet/ToolManifest",
+    "sha": "5ee3728ee12b231e5d58b67f4655c19b61ef2bb9",
+    "size": 0,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/ToolManifest?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/tree/v10.0.100/src/Cli/dotnet/ToolManifest",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/trees/5ee3728ee12b231e5d58b67f4655c19b61ef2bb9",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/ToolManifest?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/trees/5ee3728ee12b231e5d58b67f4655c19b61ef2bb9",
+      "html": "https://github.com/dotnet/sdk/tree/v10.0.100/src/Cli/dotnet/ToolManifest"
+    }
+  },
+  {
+    "name": "ToolPackage",
+    "path": "src/Cli/dotnet/ToolPackage",
+    "sha": "fb47ddbcb8ad6b2f4132cb07c83a0c7f0afe4583",
+    "size": 0,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/ToolPackage?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/tree/v10.0.100/src/Cli/dotnet/ToolPackage",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/trees/fb47ddbcb8ad6b2f4132cb07c83a0c7f0afe4583",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/ToolPackage?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/trees/fb47ddbcb8ad6b2f4132cb07c83a0c7f0afe4583",
+      "html": "https://github.com/dotnet/sdk/tree/v10.0.100/src/Cli/dotnet/ToolPackage"
+    }
+  },
+  {
+    "name": "TopLevelCommandParserResult.cs",
+    "path": "src/Cli/dotnet/TopLevelCommandParserResult.cs",
+    "sha": "10a1d8c7291dd356475c63a119180cc9d74f1fe2",
+    "size": 437,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/TopLevelCommandParserResult.cs?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/TopLevelCommandParserResult.cs",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/blobs/10a1d8c7291dd356475c63a119180cc9d74f1fe2",
+    "download_url": "https://raw.githubusercontent.com/dotnet/sdk/v10.0.100/src/Cli/dotnet/TopLevelCommandParserResult.cs",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/TopLevelCommandParserResult.cs?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/blobs/10a1d8c7291dd356475c63a119180cc9d74f1fe2",
+      "html": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/TopLevelCommandParserResult.cs"
+    }
+  },
+  {
+    "name": "TransactionalAction.cs",
+    "path": "src/Cli/dotnet/TransactionalAction.cs",
+    "sha": "df7c0118185ba5ad6bbd5e9bfe99d1ec51a9dac5",
+    "size": 3363,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/TransactionalAction.cs?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/TransactionalAction.cs",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/blobs/df7c0118185ba5ad6bbd5e9bfe99d1ec51a9dac5",
+    "download_url": "https://raw.githubusercontent.com/dotnet/sdk/v10.0.100/src/Cli/dotnet/TransactionalAction.cs",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/TransactionalAction.cs?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/blobs/df7c0118185ba5ad6bbd5e9bfe99d1ec51a9dac5",
+      "html": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/TransactionalAction.cs"
+    }
+  },
+  {
+    "name": "dotnet.csproj",
+    "path": "src/Cli/dotnet/dotnet.csproj",
+    "sha": "2e63f9a3c5a8210983c7c756dfcdf4d5e8ca87c7",
+    "size": 6885,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/dotnet.csproj?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/dotnet.csproj",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/blobs/2e63f9a3c5a8210983c7c756dfcdf4d5e8ca87c7",
+    "download_url": "https://raw.githubusercontent.com/dotnet/sdk/v10.0.100/src/Cli/dotnet/dotnet.csproj",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/dotnet.csproj?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/blobs/2e63f9a3c5a8210983c7c756dfcdf4d5e8ca87c7",
+      "html": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Cli/dotnet/dotnet.csproj"
+    }
+  },
+  {
+    "name": "xlf",
+    "path": "src/Cli/dotnet/xlf",
+    "sha": "28f7c1d40b14438a41a52dfbb9988ab6c13b083c",
+    "size": 0,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/xlf?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/tree/v10.0.100/src/Cli/dotnet/xlf",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/trees/28f7c1d40b14438a41a52dfbb9988ab6c13b083c",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet/xlf?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/trees/28f7c1d40b14438a41a52dfbb9988ab6c13b083c",
+      "html": "https://github.com/dotnet/sdk/tree/v10.0.100/src/Cli/dotnet/xlf"
+    }
+  }
+]

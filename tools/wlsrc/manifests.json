@@ -1,0 +1,226 @@
+[
+  {
+    "name": "Directory.Build.props",
+    "path": "src/Workloads/Manifests/Directory.Build.props",
+    "sha": "b627384a33f3fa774c9b29ecace8aa2da18fa921",
+    "size": 1919,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Workloads/Manifests/Directory.Build.props?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Workloads/Manifests/Directory.Build.props",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/blobs/b627384a33f3fa774c9b29ecace8aa2da18fa921",
+    "download_url": "https://raw.githubusercontent.com/dotnet/sdk/v10.0.100/src/Workloads/Manifests/Directory.Build.props",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Workloads/Manifests/Directory.Build.props?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/blobs/b627384a33f3fa774c9b29ecace8aa2da18fa921",
+      "html": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Workloads/Manifests/Directory.Build.props"
+    }
+  },
+  {
+    "name": "Directory.Build.targets",
+    "path": "src/Workloads/Manifests/Directory.Build.targets",
+    "sha": "30ec0f522f5f2cbfb5808acbb0f9b5104d466b8b",
+    "size": 923,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Workloads/Manifests/Directory.Build.targets?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Workloads/Manifests/Directory.Build.targets",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/blobs/30ec0f522f5f2cbfb5808acbb0f9b5104d466b8b",
+    "download_url": "https://raw.githubusercontent.com/dotnet/sdk/v10.0.100/src/Workloads/Manifests/Directory.Build.targets",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Workloads/Manifests/Directory.Build.targets?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/blobs/30ec0f522f5f2cbfb5808acbb0f9b5104d466b8b",
+      "html": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Workloads/Manifests/Directory.Build.targets"
+    }
+  },
+  {
+    "name": "Microsoft.NET.Workload.Emscripten.Current.Manifest",
+    "path": "src/Workloads/Manifests/Microsoft.NET.Workload.Emscripten.Current.Manifest",
+    "sha": "f124ad3799b0d384a5fe41987bbe3a9d54ea230a",
+    "size": 0,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Workloads/Manifests/Microsoft.NET.Workload.Emscripten.Current.Manifest?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/tree/v10.0.100/src/Workloads/Manifests/Microsoft.NET.Workload.Emscripten.Current.Manifest",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/trees/f124ad3799b0d384a5fe41987bbe3a9d54ea230a",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Workloads/Manifests/Microsoft.NET.Workload.Emscripten.Current.Manifest?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/trees/f124ad3799b0d384a5fe41987bbe3a9d54ea230a",
+      "html": "https://github.com/dotnet/sdk/tree/v10.0.100/src/Workloads/Manifests/Microsoft.NET.Workload.Emscripten.Current.Manifest"
+    }
+  },
+  {
+    "name": "Microsoft.NET.Workload.Emscripten.Current.Transport.Manifest",
+    "path": "src/Workloads/Manifests/Microsoft.NET.Workload.Emscripten.Current.Transport.Manifest",
+    "sha": "5186fba907fff4e2a0081002e8b88210b5b12df2",
+    "size": 0,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Workloads/Manifests/Microsoft.NET.Workload.Emscripten.Current.Transport.Manifest?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/tree/v10.0.100/src/Workloads/Manifests/Microsoft.NET.Workload.Emscripten.Current.Transport.Manifest",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/trees/5186fba907fff4e2a0081002e8b88210b5b12df2",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Workloads/Manifests/Microsoft.NET.Workload.Emscripten.Current.Transport.Manifest?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/trees/5186fba907fff4e2a0081002e8b88210b5b12df2",
+      "html": "https://github.com/dotnet/sdk/tree/v10.0.100/src/Workloads/Manifests/Microsoft.NET.Workload.Emscripten.Current.Transport.Manifest"
+    }
+  },
+  {
+    "name": "Microsoft.NET.Workload.Emscripten.net6.Manifest",
+    "path": "src/Workloads/Manifests/Microsoft.NET.Workload.Emscripten.net6.Manifest",
+    "sha": "54bca7c0850bf37a438668837aa0bb81a3e066c9",
+    "size": 0,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Workloads/Manifests/Microsoft.NET.Workload.Emscripten.net6.Manifest?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/tree/v10.0.100/src/Workloads/Manifests/Microsoft.NET.Workload.Emscripten.net6.Manifest",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/trees/54bca7c0850bf37a438668837aa0bb81a3e066c9",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Workloads/Manifests/Microsoft.NET.Workload.Emscripten.net6.Manifest?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/trees/54bca7c0850bf37a438668837aa0bb81a3e066c9",
+      "html": "https://github.com/dotnet/sdk/tree/v10.0.100/src/Workloads/Manifests/Microsoft.NET.Workload.Emscripten.net6.Manifest"
+    }
+  },
+  {
+    "name": "Microsoft.NET.Workload.Emscripten.net7.Manifest",
+    "path": "src/Workloads/Manifests/Microsoft.NET.Workload.Emscripten.net7.Manifest",
+    "sha": "084a74a066fafa9f0905f8834b35d6908b9793a0",
+    "size": 0,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Workloads/Manifests/Microsoft.NET.Workload.Emscripten.net7.Manifest?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/tree/v10.0.100/src/Workloads/Manifests/Microsoft.NET.Workload.Emscripten.net7.Manifest",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/trees/084a74a066fafa9f0905f8834b35d6908b9793a0",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Workloads/Manifests/Microsoft.NET.Workload.Emscripten.net7.Manifest?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/trees/084a74a066fafa9f0905f8834b35d6908b9793a0",
+      "html": "https://github.com/dotnet/sdk/tree/v10.0.100/src/Workloads/Manifests/Microsoft.NET.Workload.Emscripten.net7.Manifest"
+    }
+  },
+  {
+    "name": "Microsoft.NET.Workload.Emscripten.net8.Manifest",
+    "path": "src/Workloads/Manifests/Microsoft.NET.Workload.Emscripten.net8.Manifest",
+    "sha": "7414c81b9421b0b494e43e1ed55a2331d118b96d",
+    "size": 0,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Workloads/Manifests/Microsoft.NET.Workload.Emscripten.net8.Manifest?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/tree/v10.0.100/src/Workloads/Manifests/Microsoft.NET.Workload.Emscripten.net8.Manifest",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/trees/7414c81b9421b0b494e43e1ed55a2331d118b96d",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Workloads/Manifests/Microsoft.NET.Workload.Emscripten.net8.Manifest?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/trees/7414c81b9421b0b494e43e1ed55a2331d118b96d",
+      "html": "https://github.com/dotnet/sdk/tree/v10.0.100/src/Workloads/Manifests/Microsoft.NET.Workload.Emscripten.net8.Manifest"
+    }
+  },
+  {
+    "name": "Microsoft.NET.Workload.Emscripten.net9.Manifest",
+    "path": "src/Workloads/Manifests/Microsoft.NET.Workload.Emscripten.net9.Manifest",
+    "sha": "696fbcbebf0539b5414cdae5950a0220c2966844",
+    "size": 0,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Workloads/Manifests/Microsoft.NET.Workload.Emscripten.net9.Manifest?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/tree/v10.0.100/src/Workloads/Manifests/Microsoft.NET.Workload.Emscripten.net9.Manifest",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/trees/696fbcbebf0539b5414cdae5950a0220c2966844",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Workloads/Manifests/Microsoft.NET.Workload.Emscripten.net9.Manifest?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/trees/696fbcbebf0539b5414cdae5950a0220c2966844",
+      "html": "https://github.com/dotnet/sdk/tree/v10.0.100/src/Workloads/Manifests/Microsoft.NET.Workload.Emscripten.net9.Manifest"
+    }
+  },
+  {
+    "name": "Microsoft.NET.Workload.Mono.Toolchain.Current.Manifest",
+    "path": "src/Workloads/Manifests/Microsoft.NET.Workload.Mono.Toolchain.Current.Manifest",
+    "sha": "001e65642e74bcb5f5946ff645e68418ff40747e",
+    "size": 0,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Workloads/Manifests/Microsoft.NET.Workload.Mono.Toolchain.Current.Manifest?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/tree/v10.0.100/src/Workloads/Manifests/Microsoft.NET.Workload.Mono.Toolchain.Current.Manifest",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/trees/001e65642e74bcb5f5946ff645e68418ff40747e",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Workloads/Manifests/Microsoft.NET.Workload.Mono.Toolchain.Current.Manifest?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/trees/001e65642e74bcb5f5946ff645e68418ff40747e",
+      "html": "https://github.com/dotnet/sdk/tree/v10.0.100/src/Workloads/Manifests/Microsoft.NET.Workload.Mono.Toolchain.Current.Manifest"
+    }
+  },
+  {
+    "name": "Microsoft.NET.Workload.Mono.Toolchain.net6.Manifest",
+    "path": "src/Workloads/Manifests/Microsoft.NET.Workload.Mono.Toolchain.net6.Manifest",
+    "sha": "dd0c32831f26de1b71cc7a0e09cd9d53e2e94075",
+    "size": 0,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Workloads/Manifests/Microsoft.NET.Workload.Mono.Toolchain.net6.Manifest?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/tree/v10.0.100/src/Workloads/Manifests/Microsoft.NET.Workload.Mono.Toolchain.net6.Manifest",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/trees/dd0c32831f26de1b71cc7a0e09cd9d53e2e94075",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Workloads/Manifests/Microsoft.NET.Workload.Mono.Toolchain.net6.Manifest?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/trees/dd0c32831f26de1b71cc7a0e09cd9d53e2e94075",
+      "html": "https://github.com/dotnet/sdk/tree/v10.0.100/src/Workloads/Manifests/Microsoft.NET.Workload.Mono.Toolchain.net6.Manifest"
+    }
+  },
+  {
+    "name": "Microsoft.NET.Workload.Mono.Toolchain.net7.Manifest",
+    "path": "src/Workloads/Manifests/Microsoft.NET.Workload.Mono.Toolchain.net7.Manifest",
+    "sha": "7baeb7e6f230f888ac0e14ab024f65104b1e7f59",
+    "size": 0,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Workloads/Manifests/Microsoft.NET.Workload.Mono.Toolchain.net7.Manifest?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/tree/v10.0.100/src/Workloads/Manifests/Microsoft.NET.Workload.Mono.Toolchain.net7.Manifest",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/trees/7baeb7e6f230f888ac0e14ab024f65104b1e7f59",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Workloads/Manifests/Microsoft.NET.Workload.Mono.Toolchain.net7.Manifest?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/trees/7baeb7e6f230f888ac0e14ab024f65104b1e7f59",
+      "html": "https://github.com/dotnet/sdk/tree/v10.0.100/src/Workloads/Manifests/Microsoft.NET.Workload.Mono.Toolchain.net7.Manifest"
+    }
+  },
+  {
+    "name": "Microsoft.NET.Workload.Mono.Toolchain.net8.Manifest",
+    "path": "src/Workloads/Manifests/Microsoft.NET.Workload.Mono.Toolchain.net8.Manifest",
+    "sha": "14b55ba8fef0c4889a8bd91b549dd1624655eef5",
+    "size": 0,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Workloads/Manifests/Microsoft.NET.Workload.Mono.Toolchain.net8.Manifest?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/tree/v10.0.100/src/Workloads/Manifests/Microsoft.NET.Workload.Mono.Toolchain.net8.Manifest",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/trees/14b55ba8fef0c4889a8bd91b549dd1624655eef5",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Workloads/Manifests/Microsoft.NET.Workload.Mono.Toolchain.net8.Manifest?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/trees/14b55ba8fef0c4889a8bd91b549dd1624655eef5",
+      "html": "https://github.com/dotnet/sdk/tree/v10.0.100/src/Workloads/Manifests/Microsoft.NET.Workload.Mono.Toolchain.net8.Manifest"
+    }
+  },
+  {
+    "name": "Microsoft.NET.Workload.Mono.Toolchain.net9.Manifest",
+    "path": "src/Workloads/Manifests/Microsoft.NET.Workload.Mono.Toolchain.net9.Manifest",
+    "sha": "4935c45e8146bcc356e8d82a17aa354cebf7ac4c",
+    "size": 0,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Workloads/Manifests/Microsoft.NET.Workload.Mono.Toolchain.net9.Manifest?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/tree/v10.0.100/src/Workloads/Manifests/Microsoft.NET.Workload.Mono.Toolchain.net9.Manifest",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/trees/4935c45e8146bcc356e8d82a17aa354cebf7ac4c",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Workloads/Manifests/Microsoft.NET.Workload.Mono.Toolchain.net9.Manifest?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/trees/4935c45e8146bcc356e8d82a17aa354cebf7ac4c",
+      "html": "https://github.com/dotnet/sdk/tree/v10.0.100/src/Workloads/Manifests/Microsoft.NET.Workload.Mono.Toolchain.net9.Manifest"
+    }
+  },
+  {
+    "name": "manifest-packages.csproj",
+    "path": "src/Workloads/Manifests/manifest-packages.csproj",
+    "sha": "a2d2d219dec1553bd48608d45d7110f53007b2ac",
+    "size": 363,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Workloads/Manifests/manifest-packages.csproj?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Workloads/Manifests/manifest-packages.csproj",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/blobs/a2d2d219dec1553bd48608d45d7110f53007b2ac",
+    "download_url": "https://raw.githubusercontent.com/dotnet/sdk/v10.0.100/src/Workloads/Manifests/manifest-packages.csproj",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Workloads/Manifests/manifest-packages.csproj?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/blobs/a2d2d219dec1553bd48608d45d7110f53007b2ac",
+      "html": "https://github.com/dotnet/sdk/blob/v10.0.100/src/Workloads/Manifests/manifest-packages.csproj"
+    }
+  }
+]

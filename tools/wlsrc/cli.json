@@ -1,0 +1,82 @@
+[
+  {
+    "name": "Microsoft.DotNet.Cli.Utils",
+    "path": "src/Cli/Microsoft.DotNet.Cli.Utils",
+    "sha": "17a60b2f2d5fd2f09bee39560d796638a133699f",
+    "size": 0,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/Microsoft.DotNet.Cli.Utils?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/tree/v10.0.100/src/Cli/Microsoft.DotNet.Cli.Utils",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/trees/17a60b2f2d5fd2f09bee39560d796638a133699f",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/Microsoft.DotNet.Cli.Utils?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/trees/17a60b2f2d5fd2f09bee39560d796638a133699f",
+      "html": "https://github.com/dotnet/sdk/tree/v10.0.100/src/Cli/Microsoft.DotNet.Cli.Utils"
+    }
+  },
+  {
+    "name": "Microsoft.DotNet.Configurer",
+    "path": "src/Cli/Microsoft.DotNet.Configurer",
+    "sha": "8fcf52e6ba00f295aa99f312c68398ef25a7221c",
+    "size": 0,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/Microsoft.DotNet.Configurer?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/tree/v10.0.100/src/Cli/Microsoft.DotNet.Configurer",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/trees/8fcf52e6ba00f295aa99f312c68398ef25a7221c",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/Microsoft.DotNet.Configurer?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/trees/8fcf52e6ba00f295aa99f312c68398ef25a7221c",
+      "html": "https://github.com/dotnet/sdk/tree/v10.0.100/src/Cli/Microsoft.DotNet.Configurer"
+    }
+  },
+  {
+    "name": "Microsoft.DotNet.InternalAbstractions",
+    "path": "src/Cli/Microsoft.DotNet.InternalAbstractions",
+    "sha": "18e19c2c22edc075c153c7a58064aa85bd1d31f4",
+    "size": 0,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/Microsoft.DotNet.InternalAbstractions?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/tree/v10.0.100/src/Cli/Microsoft.DotNet.InternalAbstractions",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/trees/18e19c2c22edc075c153c7a58064aa85bd1d31f4",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/Microsoft.DotNet.InternalAbstractions?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/trees/18e19c2c22edc075c153c7a58064aa85bd1d31f4",
+      "html": "https://github.com/dotnet/sdk/tree/v10.0.100/src/Cli/Microsoft.DotNet.InternalAbstractions"
+    }
+  },
+  {
+    "name": "Microsoft.TemplateEngine.Cli",
+    "path": "src/Cli/Microsoft.TemplateEngine.Cli",
+    "sha": "adcf4d3ae15aa6175fad57c8e7e28cd269dc1f32",
+    "size": 0,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/Microsoft.TemplateEngine.Cli?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/tree/v10.0.100/src/Cli/Microsoft.TemplateEngine.Cli",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/trees/adcf4d3ae15aa6175fad57c8e7e28cd269dc1f32",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/Microsoft.TemplateEngine.Cli?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/trees/adcf4d3ae15aa6175fad57c8e7e28cd269dc1f32",
+      "html": "https://github.com/dotnet/sdk/tree/v10.0.100/src/Cli/Microsoft.TemplateEngine.Cli"
+    }
+  },
+  {
+    "name": "dotnet",
+    "path": "src/Cli/dotnet",
+    "sha": "013dc13509c55b25f9ca4f3a136c40949552dd3a",
+    "size": 0,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/tree/v10.0.100/src/Cli/dotnet",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/trees/013dc13509c55b25f9ca4f3a136c40949552dd3a",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Cli/dotnet?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/trees/013dc13509c55b25f9ca4f3a136c40949552dd3a",
+      "html": "https://github.com/dotnet/sdk/tree/v10.0.100/src/Cli/dotnet"
+    }
+  }
+]

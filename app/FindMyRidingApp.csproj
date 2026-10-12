@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0-android</TargetFramework>
+    <UseMaui>true</UseMaui>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>FindMyRidingApp</RootNamespace>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationId>com.findmyriding.app</ApplicationId>
+    <ApplicationVersion>1</ApplicationVersion>
+    <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+    <ApplicationTitle>FindMyRiding</ApplicationTitle>
+    <SupportedOSPlatformVersion>26</SupportedOSPlatformVersion>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+    <RunAOTCompilation>false</RunAOTCompilation>
+    <RunLinker>false</RunLinker>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CanadaRidingTagger" Version="0.1.0" />
+    <PackageReference Include="Microsoft.Maui.Controls" Version="10.0.*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- All shapefiles except the QC one (its source dir name contains a non-ASCII é that AAPT2 cannot open on Windows). -->
+    <AndroidAsset Include="..\data\Shapefiles\**" Exclude="..\data\Shapefiles\Provincial\QC\circonscriptions_électorales_2026_shapefile\**" Link="Shapefiles\%(RecursiveDir)%(Filename)%(Extension)" />
+    <!-- QC shapefiles, linked under an ASCII directory name; renamed back to the é path at runtime (see RidingData). -->
+    <AndroidAsset Include="..\data\Shapefiles\Provincial\QC\circonscriptions_électorales_2026_shapefile\**" Link="Shapefiles\Provincial\QC\qc_electorales_ascii\%(RecursiveDir)%(Filename)%(Extension)" />
+    <AndroidResource Include="Platforms\Android\Resources\**" Link="%(RecursiveDir)%(Filename)%(Extension)" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Manifests",
+    "path": "src/Workloads/Manifests",
+    "sha": "fe162d6f1757d7ef339104805b0a0060e956f1ef",
+    "size": 0,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Workloads/Manifests?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/tree/v10.0.100/src/Workloads/Manifests",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/trees/fe162d6f1757d7ef339104805b0a0060e956f1ef",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Workloads/Manifests?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/trees/fe162d6f1757d7ef339104805b0a0060e956f1ef",
+      "html": "https://github.com/dotnet/sdk/tree/v10.0.100/src/Workloads/Manifests"
+    }
+  },
+  {
+    "name": "VSInsertion",
+    "path": "src/Workloads/VSInsertion",
+    "sha": "c4e7f6a8a49eca1e0190047aba5e3b940d11c428",
+    "size": 0,
+    "url": "https://api.github.com/repos/dotnet/sdk/contents/src/Workloads/VSInsertion?ref=v10.0.100",
+    "html_url": "https://github.com/dotnet/sdk/tree/v10.0.100/src/Workloads/VSInsertion",
+    "git_url": "https://api.github.com/repos/dotnet/sdk/git/trees/c4e7f6a8a49eca1e0190047aba5e3b940d11c428",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/dotnet/sdk/contents/src/Workloads/VSInsertion?ref=v10.0.100",
+      "git": "https://api.github.com/repos/dotnet/sdk/git/trees/c4e7f6a8a49eca1e0190047aba5e3b940d11c428",
+      "html": "https://github.com/dotnet/sdk/tree/v10.0.100/src/Workloads/VSInsertion"
+    }
+  }
+]
