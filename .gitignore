@@ -1,9 +1,24 @@
-bin
-obj
-.vs/
-
+# Build output
+bin/
+obj/
+*.user
 m*.user
+
+# IDE
+.vs/
+.idea/
+
+# Local diagnostic/temp artifacts
 .tmp_*
-tmp_dl
+tmp_dl/
 maps_mb.html
 maps_sk.html
+.scratch/
+
+# Packed packages (regenerate with dotnet pack)
+*.nupkg
+
+# App tooling downloads (Android platform-tools, offline MAUI/Android workload kit)
+**/platform-tools/
+**/workloads_extract/
+workloads.zip
