@@ -8,8 +8,8 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <ApplicationId>com.findmyriding.app</ApplicationId>
-    <ApplicationVersion>1</ApplicationVersion>
-    <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+    <ApplicationVersion>2</ApplicationVersion>
+    <ApplicationDisplayVersion>1.1.0</ApplicationDisplayVersion>
     <ApplicationTitle>FindMyRiding</ApplicationTitle>
     <SupportedOSPlatformVersion>26</SupportedOSPlatformVersion>
     <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
@@ -32,6 +32,7 @@
     <Compile Remove="tools/**" />
     <ProjectReference Include="..\..\lib\CanadaRidingTagger\CanadaRidingTagger.csproj" />
     <PackageReference Include="Microsoft.Maui.Controls" Version="10.0.110" />
+		<PackageReference Include="CommunityToolkit.Maui" Version="15.0.1" />
   </ItemGroup>
 
   <ItemGroup>

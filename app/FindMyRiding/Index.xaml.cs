@@ -20,6 +20,13 @@ public partial class IndexPage : ContentPage
 
     async void OnRefreshClicked(object? sender, EventArgs e) => await RefreshAsync();
 
+protected override void OnAppearing()
+{
+	base.OnAppearing();
+	Android.Util.Log.Info("FindMyRiding", "IndexPage OnAppearing");
+	StatusBarBehavior.UpdateForCurrentTheme();
+}
+
     async Task RefreshAsync()
     {
         RefreshButton.IsEnabled = false;

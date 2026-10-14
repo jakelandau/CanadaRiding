@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
-    <style name="MauiTheme" parent="Theme.Material3.DayNight.NoActionBar" />
+    <!--
+        The status bar is transparent (MAUI edge-to-edge), so the system glyphs render over
+        the page background rather than a themed bar. Light background -> dark glyphs.
+    -->
+    <style name="MauiTheme" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar">true</item>
+    </style>
 </resources>
