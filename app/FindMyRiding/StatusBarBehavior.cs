@@ -8,14 +8,14 @@ namespace FindMyRidingApp;
 
 /// <summary>
 /// A <see cref="StatusBarBehavior"/> that derives the status bar color and glyph
-/// style from the system theme: a dark bar with light glyphs in light mode,
-/// a light bar with dark glyphs in dark mode.
+/// style from the system theme: a dark bar with light glyphs in dark mode,
+/// a light bar with dark glyphs in light mode.
 /// The values are recomputed on every (re)attach, so activity recreation on a
 /// system theme change is covered.
 /// </summary>
 public class ThemedStatusBarBehavior : StatusBarBehavior
 {
-    static readonly Color DarkBar = Color.FromArgb("#2C3E50");
+    static readonly Color DarkBar = Colors.Black;
     static readonly Color LightBar = Colors.White;
 
     protected override void OnAttachedTo(Page page, Android.Views.View platformView)
@@ -28,8 +28,8 @@ public class ThemedStatusBarBehavior : StatusBarBehavior
     {
         bool isDark = IsSystemDarkMode();
         Android.Util.Log.Info("FindMyRiding", $"StatusBarBehavior theme update isDark={isDark}");
-        StatusBarColor = isDark ? LightBar : DarkBar;
-        StatusBarStyle = isDark ? StatusBarStyle.DarkContent : StatusBarStyle.LightContent;
+        StatusBarColor = isDark ? DarkBar : LightBar;
+        StatusBarStyle = isDark ? StatusBarStyle.LightContent : StatusBarStyle.DarkContent;
     }
 
     static bool IsSystemDarkMode()
