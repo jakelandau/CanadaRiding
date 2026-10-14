@@ -40,7 +40,7 @@ Publish profile: `app/FindMyRiding/Properties/PublishProfiles/FindMyRidingApp.Si
 - **CLI** (same output):
 
 ```
-dotnet publish app/FindMyRiding/FindMyRidingApp.csproj -c Release -r android-arm64
+dotnet publish app/FindMyRiding/FindMyRidingApp.csproj -c Release -r android-arm64 -p:PublishProfile=FindMyRidingApp.Sideloader.pubxml
 ```
 
 Installable APK: `app/FindMyRiding/bin/Release/net10.0-android/android-arm64/sideload/com.findmyriding.app-Signed.apk`.
