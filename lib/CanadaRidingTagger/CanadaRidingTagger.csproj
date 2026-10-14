@@ -5,12 +5,20 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <Version>0.1.0</Version>
+    <!-- MinVer: version is derived from git tags, not hand-edited. Cut `v<major.minor.patch>`
+         on main (see CHANGELOG.md); untagged dev builds become a pre-release of the next patch.
+         MinVerMinimumMajorMinor is the pre-first-tag baseline so dev builds are 0.2.0-alpha, not 0.0.0. -->
+    <MinVerTagPrefix>v</MinVerTagPrefix>
+    <MinVerMinimumMajorMinor>0.2</MinVerMinimumMajorMinor>
     <Description>Identifies the Canadian federal riding and province/territory electoral district containing a WGS84 latitude/longitude, from bundled electoral-boundary shapefiles.</Description>
     <Authors>Jake Landau</Authors>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MinVer" Version="8.0.0" PrivateAssets="all" />
+  </ItemGroup>
 
   <ItemGroup>
     <Compile Remove="tests/**" />
