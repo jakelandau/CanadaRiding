@@ -64,8 +64,7 @@
                 <Setter Property="CornerRadius" Value="12" />
                 <Setter Property="FontAttributes" Value="Bold" />
                 <Setter Property="HeightRequest" Value="48" />
-                <Setter Property="WidthRequest" Value="60" />
-                <Setter Property="BackgroundColor" Value="{StaticResource AccentRed}" />
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Light=#1B4D8C, Dark=#3565A0}" />
                 <Setter Property="TextColor" Value="White" />
             </Style>
         </ResourceDictionary>

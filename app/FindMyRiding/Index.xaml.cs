@@ -99,29 +99,40 @@ protected override void OnAppearing()
     {
         LocationLabel.Text = locationText;
         SetStatus("Loading riding data…");
-        var (fed, prov) = await Task.Run(() =>
+        RidingResult result = await Task.Run(() =>
         {
             if (tagger is null)
             {
                 Android.Util.Log.Info("FindMyRiding", "Ensuring data root");
                 string dataRoot = RidingData.EnsureDataRoot();
-                tagger = new RidingTagger();
+                // Publish only once fully loaded; a partially loaded tagger would
+                // miss datasets and report wrong "unknown" results.
+                var fresh = new RidingTagger();
                 foreach (var source in StandardDatasets.All(dataRoot))
                 {
-                    tagger.Load(source);
+                    fresh.Load(source);
                 }
+                tagger = fresh;
                 Android.Util.Log.Info("FindMyRiding", "Tagger loaded");
             }
-            var result = tagger.FindRidings(lat, lon);
-            Android.Util.Log.Info("FindMyRiding", $"FindRidings fed={result.Federal?.NameEn} prov={result.Provincial?.NameEn}");
-            return (result.Federal?.NameEn ?? "unknown", result.Provincial?.NameEn ?? "unknown");
+            var found = tagger.FindRidings(lat, lon);
+            Android.Util.Log.Info("FindMyRiding", $"FindRidings fed={found.Federal?.NameEn} prov={found.Provincial?.NameEn}");
+            return found;
         });
 
+        string fed = FormatRiding(result.Federal), prov = FormatRiding(result.Provincial);
         SetRidingValue(FederalLabel, fed);
         SetRidingValue(ProvincialLabel, prov);
+        ProvincialHeading.Text = result.Jurisdiction is null
+            ? "PROVINCIAL / TERRITORIAL RIDING"
+            : $"{result.Jurisdiction.Value.DisplayName()} RIDING".ToUpperInvariant();
         SetStatus("Done.");
         Android.Util.Log.Info("FindMyRiding", $"Labels set fed={fed} prov={prov}");
     }
+
+    // Prefixes each riding with its dataset id number ("No. N/A" for jurisdictions
+    // whose datasets carry no id field — the three territories).
+    static string FormatRiding(District? d) => d is null ? "unknown" : $"No. {(d.Id == d.NameEn ? "N/A" : d.Id)}: {d.NameEn}";
 
     // Mirrors the palette in App.xaml, set imperatively so status/result color
     // tracks meaning at runtime (error vs. ok; found vs. unknown).

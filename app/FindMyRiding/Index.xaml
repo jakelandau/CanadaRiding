@@ -9,7 +9,7 @@
         <local:ThemedStatusBarBehavior x:Name="StatusBarBehavior" />
     </ContentPage.Behaviors>
     <VerticalStackLayout Padding="24" Spacing="20"
-                           HorizontalOptions="Center"
+                           HorizontalOptions="Fill"
                            VerticalOptions="Center"
                            MaximumWidthRequest="440">
         <VerticalStackLayout Spacing="4" HorizontalOptions="Center">
@@ -17,7 +17,7 @@
             <Label Text="Which riding are you in?" Style="{StaticResource MutedSmall}" HorizontalTextAlignment="Center" />
         </VerticalStackLayout>
 
-        <Frame Style="{StaticResource RidingCard}">
+        <Frame Style="{StaticResource RidingCard}" HorizontalOptions="Fill">
             <VerticalStackLayout Spacing="16">
                 <VerticalStackLayout Spacing="4">
                     <Label Text="FEDERAL RIDING" Style="{StaticResource SectionHeading}" />
@@ -26,29 +26,32 @@
                 <BoxView HeightRequest="1"
                           Color="{AppThemeBinding Light=#E4E7EA, Dark=#2A3037}" />
                 <VerticalStackLayout Spacing="4">
-                    <Label Text="PROVINCIAL / TERRITORIAL RIDING" Style="{StaticResource SectionHeading}" />
+                    <Label x:Name="ProvincialHeading" Text="PROVINCIAL / TERRITORIAL RIDING"
+                       Style="{StaticResource SectionHeading}" />
                     <Label x:Name="ProvincialLabel" Text="…" Style="{StaticResource ResultValue}" />
                 </VerticalStackLayout>
                 <Label x:Name="LocationLabel" Style="{StaticResource MutedSmall}" />
             </VerticalStackLayout>
         </Frame>
 
-        <VerticalStackLayout Spacing="10">
-            <Label Text="Check another location" Style="{StaticResource SectionHeading}" />
-            <Frame Style="{StaticResource InputCard}">
-                <Grid ColumnDefinitions="*,*,Auto" ColumnSpacing="6">
-                    <Entry x:Name="LatEntry" Grid.Column="0" Placeholder="Latitude"
-                           Style="{StaticResource CoordEntry}" />
-                    <Entry x:Name="LngEntry" Grid.Column="1" Placeholder="Longitude"
-                           Style="{StaticResource CoordEntry}" />
-                    <Button x:Name="ApplyButton" Grid.Column="2" Text="Go" Clicked="OnApplyClicked"
-                            Style="{StaticResource SecondaryButton}" />
-                </Grid>
-            </Frame>
-        </VerticalStackLayout>
-
         <Button x:Name="UseGpsButton" Text="Use device location" Clicked="OnUseGpsClicked"
                 Style="{StaticResource PrimaryButton}" />
+
+        <VerticalStackLayout Spacing="10">
+            <Label Text="Check another location" Style="{StaticResource SectionHeading}" />
+            <Frame Style="{StaticResource InputCard}" HorizontalOptions="Fill">
+                <VerticalStackLayout Spacing="10">
+                    <Grid ColumnDefinitions="*,*" ColumnSpacing="6">
+                        <Entry x:Name="LatEntry" Grid.Column="0" Placeholder="Latitude"
+                               Style="{StaticResource CoordEntry}" />
+                        <Entry x:Name="LngEntry" Grid.Column="1" Placeholder="Longitude"
+                               Style="{StaticResource CoordEntry}" />
+                    </Grid>
+                </VerticalStackLayout>
+            </Frame>
+            <Button x:Name="ApplyButton" Text="Use manual location" Clicked="OnApplyClicked"
+                    Style="{StaticResource SecondaryButton}" />
+        </VerticalStackLayout>
 
         <Label x:Name="StatusLabel" Text="Checking location…" Style="{StaticResource MutedSmall}"
                HorizontalTextAlignment="Center" />
