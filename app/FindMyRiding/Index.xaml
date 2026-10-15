@@ -17,8 +17,14 @@
         <VerticalStackLayout Grid.Row="1" Padding="24" Spacing="12" VerticalOptions="Center">
             <Label x:Name="FederalLabel" FontAttributes="Bold" FontSize="18" />
             <Label x:Name="ProvincialLabel" FontAttributes="Bold" FontSize="18" />
-            <Button x:Name="RefreshButton" Text="Refresh" Clicked="OnRefreshClicked" />
             <Label x:Name="LocationLabel" />
+            <Label Text="Check another location" />
+            <HorizontalStackLayout Spacing="8">
+                <Entry x:Name="LatEntry" Placeholder="Latitude" WidthRequest="110" />
+                <Entry x:Name="LngEntry" Placeholder="Longitude" WidthRequest="110" />
+                <Button x:Name="ApplyButton" Text="Go" Clicked="OnApplyClicked" />
+            </HorizontalStackLayout>
+            <Button x:Name="UseGpsButton" Text="Use device location" Clicked="OnUseGpsClicked" />
             <Label x:Name="StatusLabel" Text="Checking location…" />
         </VerticalStackLayout>
     </Grid>

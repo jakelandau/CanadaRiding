@@ -15,6 +15,9 @@
     <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
     <RunAOTCompilation>false</RunAOTCompilation>
     <RunLinker>false</RunLinker>
+    <AndroidUseFastDeployment>false</AndroidUseFastDeployment>
+    <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
+    <AndroidPackageFormat>apk</AndroidPackageFormat>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
