@@ -21,7 +21,10 @@ public sealed class RidingTagger
   the index is per-dataset.
 - `FindRidings` returns the federal district and the provincial/territorial
   district that cover the point. Each is `null` when no such district is loaded
-  or the point lies outside every district.
+  or the point lies outside every district. The subnational `Jurisdiction` is
+  determined from the federal district's code (the Elections Canada federal
+  numbering scheme); when the federal district cannot determine it, the loaded
+  dataset covering the point decides.
 
 ### `StandardDatasets`
 Convenience accessors for the 14 standard datasets, rooted at a data directory
@@ -43,6 +46,7 @@ public static class StandardDatasets
 | `DatasetDefinition` | `(string? IdField, string NameEn, string? NameFr)` | Attribute-field names a dataset uses for id / English name / French name. |
 | `DistrictSource` | `(string Path, DatasetDefinition Definition, Jurisdiction? Jurisdiction)` | A loadable dataset: a file path plus its field definitions and jurisdiction. |
 | `Jurisdiction` | enum | The 13 subnational jurisdictions (`Alberta` … `Nunavut`). Federal is *not* a member — it is addressed separately. |
+| `FederalJurisdiction` | `static Jurisdiction? FromId(string)` | Maps a federal district id to its `Jurisdiction` (the code's first two digits), or `null` when unrecognized. |
 
 ## Usage
 ```csharp

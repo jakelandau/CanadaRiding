@@ -14,6 +14,14 @@ All notable changes to **CanadaRidingTagger** are documented here.
         version from the tag; between tags, builds are a pre-release of the next
         patch. See CanadaRidingTagger.csproj for the MinVer config. -->
 
+- The subnational jurisdiction is now determined from the federal riding's
+  two-digit code prefix (the Elections Canada federal numbering scheme) instead
+  of whichever loaded provincial dataset contains the point, fixing cross-jurisdiction
+  bleed when a point is covered by more than one provincial dataset (e.g. a
+  Labrador point also covered by a Quebec polygon).
+- New `FederalJurisdiction.FromId(string)` maps a federal district id to its
+  `Jurisdiction`, or `null` for an unrecognized code.
+
 ## [0.1.0] - 2026-10-12
 
 - Initial release.

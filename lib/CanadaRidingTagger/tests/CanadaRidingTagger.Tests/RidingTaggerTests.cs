@@ -76,7 +76,9 @@ public class RidingTaggerTests
         Assert.Equal("24037", result.Federal.Id);
         Assert.False(string.IsNullOrEmpty(result.Federal.NameEn));
         Assert.Null(result.Provincial);
-        Assert.Null(result.Jurisdiction);
+        // Jurisdiction is now determined from the federal code (24xxx -> Quebec) even though
+        // no subnational dataset is loaded; only the provincial district stays null.
+        Assert.Equal(Jurisdiction.Quebec, result.Jurisdiction);
     }
 
     // --- federal + one province ------------------------------------------
@@ -170,5 +172,26 @@ public class RidingTaggerTests
         Assert.NotNull(result.Provincial);
         Assert.Equal(expectedName, result.Provincial.NameEn);
         Assert.NotNull(result.Federal);
+    }
+
+    // Regression: at (52.08, -60.69) the Quebec shapefile's polygon spuriously covers
+    // the point alongside the Newfoundland one. Jurisdiction must come from the
+    // federal code (10004 -> NL), not from whichever provincial dataset is loaded last.
+    [Fact]
+    public void FindRidings_LabradorPoint_ReturnsNewfoundlandNotQuebec()
+    {
+        var tagger = new RidingTagger();
+        foreach (var source in StandardDatasets.All(DataRoot))
+        {
+            tagger.Load(source);
+        }
+
+        var result = tagger.FindRidings(52.08, -60.69);
+
+        Assert.NotNull(result.Federal);
+        Assert.Equal("Labrador", result.Federal.NameEn);
+        Assert.Equal(Jurisdiction.NewfoundlandLabrador, result.Jurisdiction);
+        Assert.NotNull(result.Provincial);
+        Assert.Equal("Lake Melville", result.Provincial.NameEn);
     }
 }
