@@ -22,3 +22,17 @@ maps_sk.html
 **/platform-tools/
 **/workloads_extract/
 workloads.zip
+
+# MAUI device-testing scratch (app/FindMyRiding)
+app/FindMyRiding/_apk*/
+app/FindMyRiding/odapk/
+app/FindMyRiding/live_apk_extract/
+app/FindMyRiding/live_base.apk
+app/FindMyRiding/_fd_push/
+app/FindMyRiding/ui*.xml
+app/FindMyRiding/*_dump*.xml
+app/FindMyRiding/fmr_*.png
+# root scratch + redundant config
+/_fmr_log.txt
+/_ui_fmr.xml
+/NuGet.config
