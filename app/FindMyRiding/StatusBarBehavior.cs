@@ -32,7 +32,7 @@ public class ThemedStatusBarBehavior : StatusBarBehavior
         StatusBarStyle = isDark ? StatusBarStyle.LightContent : StatusBarStyle.DarkContent;
     }
 
-    static bool IsSystemDarkMode()
+    public static bool IsSystemDarkMode()
     {
         var activity = MauiPlatform.CurrentActivity;
         return activity is not null

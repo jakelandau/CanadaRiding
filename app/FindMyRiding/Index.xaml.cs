@@ -36,7 +36,7 @@ protected override void OnAppearing()
             double? lat = _manualLat, lon = _manualLon;
             if (lat is null || lon is null)
             {
-                StatusLabel.Text = "Requesting location…";
+                SetStatus("Requesting location…");
                 var geo = Geolocation.Default;
                 var position = await geo.GetLocationAsync(new GeolocationRequest(GeolocationAccuracy.High));
                 lat = position.Latitude;
@@ -48,7 +48,7 @@ protected override void OnAppearing()
         catch (Exception ex)
         {
             Android.Util.Log.Error("FindMyRiding", "RefreshAsync error: " + ex);
-            StatusLabel.Text = $"Error: {ex.Message}";
+            SetStatus($"Error: {ex.Message}", error: true);
         }
         finally
         {
@@ -73,7 +73,7 @@ protected override void OnAppearing()
         catch (Exception ex)
         {
             Android.Util.Log.Error("FindMyRiding", "OnApplyClicked error: " + ex);
-            StatusLabel.Text = $"Error: {ex.Message}";
+            SetStatus($"Error: {ex.Message}", error: true);
         }
         finally
         {
@@ -98,7 +98,7 @@ protected override void OnAppearing()
     async Task LoadRidingsAsync(double lat, double lon, string locationText)
     {
         LocationLabel.Text = locationText;
-        StatusLabel.Text = "Loading riding data…";
+        SetStatus("Loading riding data…");
         var (fed, prov) = await Task.Run(() =>
         {
             if (tagger is null)
@@ -117,9 +117,32 @@ protected override void OnAppearing()
             return (result.Federal?.NameEn ?? "unknown", result.Provincial?.NameEn ?? "unknown");
         });
 
-        FederalLabel.Text = $"Federal riding: {fed}";
-        ProvincialLabel.Text = $"Provincial/Territorial riding: {prov}";
-        StatusLabel.Text = "Done.";
+        SetRidingValue(FederalLabel, fed);
+        SetRidingValue(ProvincialLabel, prov);
+        SetStatus("Done.");
         Android.Util.Log.Info("FindMyRiding", $"Labels set fed={fed} prov={prov}");
+    }
+
+    // Mirrors the palette in App.xaml, set imperatively so status/result color
+    // tracks meaning at runtime (error vs. ok; found vs. unknown).
+    static readonly Color LightMuted = Color.FromHex("#6F767E");
+    static readonly Color DarkMuted = Color.FromHex("#98A0A8");
+    static readonly Color LightError = Color.FromHex("#C40E2B");
+    static readonly Color DarkError = Color.FromHex("#FF8A94");
+    static readonly Color LightValue = Color.FromHex("#1F2328");
+    static readonly Color DarkValue = Color.FromHex("#F2F4F6");
+
+    void SetStatus(string text, bool error = false)
+    {
+        bool dark = ThemedStatusBarBehavior.IsSystemDarkMode();
+        StatusLabel.Text = text;
+        StatusLabel.TextColor = error ? (dark ? DarkError : LightError) : (dark ? DarkMuted : LightMuted);
+    }
+
+    static void SetRidingValue(Label label, string value)
+    {
+        bool dark = ThemedStatusBarBehavior.IsSystemDarkMode();
+        label.Text = value;
+        label.TextColor = value == "unknown" ? (dark ? DarkMuted : LightMuted) : (dark ? DarkValue : LightValue);
     }
 }

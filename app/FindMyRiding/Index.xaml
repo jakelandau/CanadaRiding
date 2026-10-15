@@ -3,29 +3,54 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:FindMyRidingApp"
              x:Class="FindMyRidingApp.IndexPage"
-             Title="FindMyRiding">
+    Title="FindMyRiding"
+    BackgroundColor="{AppThemeBinding Light=#F7F8FA, Dark=#101418}">
     <ContentPage.Behaviors>
         <local:ThemedStatusBarBehavior x:Name="StatusBarBehavior" />
     </ContentPage.Behaviors>
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-        <Label Text="FindMyRiding" FontAttributes="Bold" FontSize="32" HorizontalOptions="Center"
-               Grid.Row="0" Padding="24,48,24,0" />
-        <VerticalStackLayout Grid.Row="1" Padding="24" Spacing="12" VerticalOptions="Center">
-            <Label x:Name="FederalLabel" FontAttributes="Bold" FontSize="18" />
-            <Label x:Name="ProvincialLabel" FontAttributes="Bold" FontSize="18" />
-            <Label x:Name="LocationLabel" />
-            <Label Text="Check another location" />
-            <HorizontalStackLayout Spacing="8">
-                <Entry x:Name="LatEntry" Placeholder="Latitude" WidthRequest="110" />
-                <Entry x:Name="LngEntry" Placeholder="Longitude" WidthRequest="110" />
-                <Button x:Name="ApplyButton" Text="Go" Clicked="OnApplyClicked" />
-            </HorizontalStackLayout>
-            <Button x:Name="UseGpsButton" Text="Use device location" Clicked="OnUseGpsClicked" />
-            <Label x:Name="StatusLabel" Text="Checking location…" />
+    <VerticalStackLayout Padding="24" Spacing="20"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           MaximumWidthRequest="440">
+        <VerticalStackLayout Spacing="4" HorizontalOptions="Center">
+            <Label Text="FindMyRiding" Style="{StaticResource PageTitle}" />
+            <Label Text="Which riding are you in?" Style="{StaticResource MutedSmall}" HorizontalTextAlignment="Center" />
         </VerticalStackLayout>
-    </Grid>
+
+        <Frame Style="{StaticResource RidingCard}">
+            <VerticalStackLayout Spacing="16">
+                <VerticalStackLayout Spacing="4">
+                    <Label Text="FEDERAL RIDING" Style="{StaticResource SectionHeading}" />
+                    <Label x:Name="FederalLabel" Text="…" Style="{StaticResource ResultValue}" />
+                </VerticalStackLayout>
+                <BoxView HeightRequest="1"
+                          Color="{AppThemeBinding Light=#E4E7EA, Dark=#2A3037}" />
+                <VerticalStackLayout Spacing="4">
+                    <Label Text="PROVINCIAL / TERRITORIAL RIDING" Style="{StaticResource SectionHeading}" />
+                    <Label x:Name="ProvincialLabel" Text="…" Style="{StaticResource ResultValue}" />
+                </VerticalStackLayout>
+                <Label x:Name="LocationLabel" Style="{StaticResource MutedSmall}" />
+            </VerticalStackLayout>
+        </Frame>
+
+        <VerticalStackLayout Spacing="10">
+            <Label Text="Check another location" Style="{StaticResource SectionHeading}" />
+            <Frame Style="{StaticResource InputCard}">
+                <Grid ColumnDefinitions="*,*,Auto" ColumnSpacing="6">
+                    <Entry x:Name="LatEntry" Grid.Column="0" Placeholder="Latitude"
+                           Style="{StaticResource CoordEntry}" />
+                    <Entry x:Name="LngEntry" Grid.Column="1" Placeholder="Longitude"
+                           Style="{StaticResource CoordEntry}" />
+                    <Button x:Name="ApplyButton" Grid.Column="2" Text="Go" Clicked="OnApplyClicked"
+                            Style="{StaticResource SecondaryButton}" />
+                </Grid>
+            </Frame>
+        </VerticalStackLayout>
+
+        <Button x:Name="UseGpsButton" Text="Use device location" Clicked="OnUseGpsClicked"
+                Style="{StaticResource PrimaryButton}" />
+
+        <Label x:Name="StatusLabel" Text="Checking location…" Style="{StaticResource MutedSmall}"
+               HorizontalTextAlignment="Center" />
+    </VerticalStackLayout>
 </ContentPage>

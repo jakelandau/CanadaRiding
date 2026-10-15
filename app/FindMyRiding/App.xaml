@@ -3,6 +3,71 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FindMyRidingApp.App">
     <Application.Resources>
-        <ResourceDictionary />
+        <ResourceDictionary>
+            <!-- Palette: Canadian red accent; neutral surfaces that work in both themes. -->
+            <Color x:Key="AccentRed">#E8112D</Color>
+
+            <!-- Result card -->
+            <Style x:Key="RidingCard" TargetType="Frame">
+                <Setter Property="CornerRadius" Value="16" />
+                <Setter Property="Padding" Value="20" />
+                <Setter Property="HasShadow" Value="False" />
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Light=#FFFFFF, Dark=#1C2127}" />
+                <Setter Property="BorderColor" Value="{AppThemeBinding Light=#E4E7EA, Dark=#2A3037}" />
+            </Style>
+
+            <!-- Typography -->
+            <Style x:Key="PageTitle" TargetType="Label">
+                <Setter Property="FontSize" Value="30" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+            </Style>
+            <Style x:Key="SectionHeading" TargetType="Label">
+                <Setter Property="FontSize" Value="12" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="TextColor" Value="{AppThemeBinding Light=#6F767E, Dark=#98A0A8}" />
+            </Style>
+            <Style x:Key="ResultValue" TargetType="Label">
+                <Setter Property="FontSize" Value="20" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="TextColor" Value="{AppThemeBinding Light=#1F2328, Dark=#F2F4F6}" />
+            </Style>
+            <Style x:Key="MutedSmall" TargetType="Label">
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="TextColor" Value="{AppThemeBinding Light=#6F767E, Dark=#98A0A8}" />
+            </Style>
+
+            <!-- Inputs -->
+            <Style x:Key="InputCard" TargetType="Frame">
+                <Setter Property="CornerRadius" Value="12" />
+                <Setter Property="Padding" Value="10" />
+                <Setter Property="HasShadow" Value="False" />
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Light=#F2F4F6, Dark=#23282E}" />
+                <Setter Property="BorderColor" Value="{AppThemeBinding Light=#E4E7EA, Dark=#2A3037}" />
+            </Style>
+            <Style x:Key="CoordEntry" TargetType="Entry">
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Light=#FFFFFF, Dark=#1C2127}" />
+                <Setter Property="HeightRequest" Value="48" />
+                <Setter Property="TextColor" Value="{AppThemeBinding Light=#1F2328, Dark=#F2F4F6}" />
+                <Setter Property="PlaceholderColor" Value="{AppThemeBinding Light=#9AA0A6, Dark=#6F767E}" />
+            </Style>
+
+            <!-- Buttons -->
+            <Style x:Key="PrimaryButton" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource AccentRed}" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="CornerRadius" Value="12" />
+                <Setter Property="HeightRequest" Value="52" />
+            </Style>
+            <Style x:Key="SecondaryButton" TargetType="Button">
+                <Setter Property="CornerRadius" Value="12" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="HeightRequest" Value="48" />
+                <Setter Property="WidthRequest" Value="60" />
+                <Setter Property="BackgroundColor" Value="{StaticResource AccentRed}" />
+                <Setter Property="TextColor" Value="White" />
+            </Style>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
