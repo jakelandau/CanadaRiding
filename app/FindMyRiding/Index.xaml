@@ -20,14 +20,24 @@
         <Frame Style="{StaticResource RidingCard}" HorizontalOptions="Fill">
             <VerticalStackLayout Spacing="16">
                 <VerticalStackLayout Spacing="4">
-                    <Label Text="FEDERAL RIDING" Style="{StaticResource SectionHeading}" />
+                    <Grid ColumnDefinitions="*,Auto">
+                        <Label Text="FEDERAL RIDING" Style="{StaticResource SectionHeading}"
+                               Grid.Column="0" VerticalOptions="Center" />
+                        <Label x:Name="FederalIdLabel" Style="{StaticResource SectionId}"
+                               Grid.Column="1" VerticalOptions="Center" />
+                    </Grid>
                     <Label x:Name="FederalLabel" Text="…" Style="{StaticResource ResultValue}" />
                 </VerticalStackLayout>
                 <BoxView HeightRequest="1"
                           Color="{AppThemeBinding Light=#E4E7EA, Dark=#2A3037}" />
                 <VerticalStackLayout Spacing="4">
-                    <Label x:Name="ProvincialHeading" Text="PROVINCIAL / TERRITORIAL RIDING"
-                       Style="{StaticResource SectionHeading}" />
+                    <Grid ColumnDefinitions="*,Auto">
+                        <Label x:Name="ProvincialHeading" Text="PROVINCIAL / TERRITORIAL RIDING"
+                               Style="{StaticResource SectionHeading}"
+                               Grid.Column="0" VerticalOptions="Center" />
+                        <Label x:Name="ProvincialIdLabel" Style="{StaticResource SectionId}"
+                               Grid.Column="1" VerticalOptions="Center" />
+                    </Grid>
                     <Label x:Name="ProvincialLabel" Text="…" Style="{StaticResource ResultValue}" />
                 </VerticalStackLayout>
                 <Label x:Name="LocationLabel" Style="{StaticResource MutedSmall}" />

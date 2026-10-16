@@ -120,19 +120,47 @@ protected override void OnAppearing()
             return found;
         });
 
-        string fed = FormatRiding(result.Federal), prov = FormatRiding(result.Provincial);
+        string fed = FormatRidingName(result.Federal), prov = FormatRidingName(result.Provincial);
+        FederalIdLabel.Text = FormatRidingId(result.Federal);
+        ProvincialIdLabel.Text = FormatRidingId(result.Provincial);
         SetRidingValue(FederalLabel, fed);
         SetRidingValue(ProvincialLabel, prov);
         ProvincialHeading.Text = result.Jurisdiction is null
             ? "PROVINCIAL / TERRITORIAL RIDING"
             : $"{result.Jurisdiction.Value.DisplayName()} RIDING".ToUpperInvariant();
-        SetStatus("Done.");
+        double km = DistanceKm(lat, lon, CentreBlockLat, CentreBlockLon);
+        SetStatus($"{FormatDistanceKm(km)} from Parliament Hill");
         Android.Util.Log.Info("FindMyRiding", $"Labels set fed={fed} prov={prov}");
     }
 
-    // Prefixes each riding with its dataset id number ("No. N/A" for jurisdictions
+    // Dataset id number shown beside the section heading ("No. N/A" for jurisdictions
     // whose datasets carry no id field — the three territories).
-    static string FormatRiding(District? d) => d is null ? "unknown" : $"No. {(d.Id == d.NameEn ? "N/A" : d.Id)}: {d.NameEn}";
+    static string FormatRidingId(District? d) => d is null ? "" : $"No. {(d.Id == d.NameEn ? "N/A" : d.Id)}";
+
+    static string FormatRidingName(District? d) => d is null ? "unknown" : d.NameEn;
+
+    // Centre Block of the Parliament Buildings, Ottawa: 45°25′30″N 75°42′00″W.
+    static readonly double CentreBlockLat = 45.4250;
+    static readonly double CentreBlockLon = -75.7000;
+
+    // Great-circle distance in km (haversine, mean Earth radius).
+    static double DistanceKm(double lat1, double lon1, double lat2, double lon2)
+    {
+        const double R = 6371.0088;
+        double p1 = lat1 * Math.PI / 180, p2 = lat2 * Math.PI / 180;
+        double dP = (lat2 - lat1) * Math.PI / 180, dL = (lon2 - lon1) * Math.PI / 180;
+        double h = Math.Sin(dP / 2) * Math.Sin(dP / 2)
+                 + Math.Cos(p1) * Math.Cos(p2) * Math.Sin(dL / 2) * Math.Sin(dL / 2);
+        return 2 * R * Math.Asin(Math.Sqrt(h));
+    }
+
+    // m below 1 km, one decimal below 100 km, rounded km with grouping beyond.
+    static string FormatDistanceKm(double km)
+    {
+        if (km < 1) return $"{(long)Math.Round(km * 1000):#,0} m";
+        if (km < 100) return km.ToString("0.0", CultureInfo.InvariantCulture) + " km";
+        return ((long)Math.Round(km)).ToString("#,0", CultureInfo.InvariantCulture) + " km";
+    }
 
     // Mirrors the palette in App.xaml, set imperatively so status/result color
     // tracks meaning at runtime (error vs. ok; found vs. unknown).

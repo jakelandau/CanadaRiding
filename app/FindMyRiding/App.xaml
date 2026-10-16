@@ -36,6 +36,10 @@
                 <Setter Property="FontSize" Value="14" />
                 <Setter Property="TextColor" Value="{AppThemeBinding Light=#6F767E, Dark=#98A0A8}" />
             </Style>
+            <Style x:Key="SectionId" TargetType="Label">
+                <Setter Property="FontSize" Value="12" />
+                <Setter Property="TextColor" Value="{AppThemeBinding Light=#6F767E, Dark=#98A0A8}" />
+            </Style>
 
             <!-- Inputs -->
             <Style x:Key="InputCard" TargetType="Frame">
