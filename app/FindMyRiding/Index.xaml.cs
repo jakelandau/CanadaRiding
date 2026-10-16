@@ -8,10 +8,12 @@ public partial class IndexPage : ContentPage
 {
     static RidingTagger? tagger;
     double? _manualLat, _manualLon;
+    bool _fsaMode;
 
     public IndexPage()
     {
         InitializeComponent();
+        SetMode(false);
         Android.Util.Log.Info("FindMyRiding", "IndexPage ctor");
         Loaded += async (_, _) =>
         {
@@ -61,14 +63,21 @@ protected override void OnAppearing()
         ApplyButton.IsEnabled = false;
         try
         {
-            if (!TryParseCoordinate(LatEntry.Text, out double lat, 90))
-                throw new FormatException("Invalid latitude: expected a number between -90 and 90.");
-            if (!TryParseCoordinate(LngEntry.Text, out double lon, 180))
-                throw new FormatException("Invalid longitude: expected a number between -180 and 180.");
+            if (_fsaMode)
+            {
+                await LoadFsaAsync(FsaEntry.Text ?? "");
+            }
+            else
+            {
+                if (!TryParseCoordinate(LatEntry.Text, out double lat, 90))
+                    throw new FormatException("Invalid latitude: expected a number between -90 and 90.");
+                if (!TryParseCoordinate(LngEntry.Text, out double lon, 180))
+                    throw new FormatException("Invalid longitude: expected a number between -180 and 180.");
 
-            _manualLat = lat;
-            _manualLon = lon;
-            await LoadRidingsAsync(lat, lon, $"Location (manual): {lat:0.0000}, {lon:0.0000}");
+                _manualLat = lat;
+                _manualLon = lon;
+                await LoadRidingsAsync(lat, lon, $"Location (manual): {lat:0.0000}, {lon:0.0000}");
+            }
         }
         catch (Exception ex)
         {
@@ -79,6 +88,25 @@ protected override void OnAppearing()
         {
             ApplyButton.IsEnabled = true;
         }
+    }
+
+    void OnModeLatLongClicked(object? sender, EventArgs e) => SetMode(false);
+
+    void OnModeFsaClicked(object? sender, EventArgs e) => SetMode(true);
+
+    // Switches the manual search input between coordinates and postal code;
+    // the active chip takes the teal chip color, the inactive chip stays neutral.
+    void SetMode(bool fsa)
+    {
+        _fsaMode = fsa;
+        CoordsGrid.IsVisible = !fsa;
+        FsaEntry.IsVisible = fsa;
+        bool dark = ThemedStatusBarBehavior.IsSystemDarkMode();
+        (Button active, Button inactive) = fsa ? (ModeFsaButton, ModeLatLongButton) : (ModeLatLongButton, ModeFsaButton);
+        active.BackgroundColor = dark ? AccentTealDark : AccentTeal;
+        active.TextColor = Colors.White;
+        inactive.BackgroundColor = dark ? DarkChip : LightChip;
+        inactive.TextColor = dark ? DarkValue : LightValue;
     }
 
     async void OnUseGpsClicked(object? sender, EventArgs e)
@@ -97,29 +125,63 @@ protected override void OnAppearing()
 
     async Task LoadRidingsAsync(double lat, double lon, string locationText)
     {
-        LocationLabel.Text = locationText;
         SetStatus("Loading riding data…");
         RidingResult result = await Task.Run(() =>
         {
-            if (tagger is null)
-            {
-                Android.Util.Log.Info("FindMyRiding", "Ensuring data root");
-                string dataRoot = RidingData.EnsureDataRoot();
-                // Publish only once fully loaded; a partially loaded tagger would
-                // miss datasets and report wrong "unknown" results.
-                var fresh = new RidingTagger();
-                foreach (var source in StandardDatasets.All(dataRoot))
-                {
-                    fresh.Load(source);
-                }
-                tagger = fresh;
-                Android.Util.Log.Info("FindMyRiding", "Tagger loaded");
-            }
-            var found = tagger.FindRidings(lat, lon);
+            var found = EnsureTagger().FindRidings(lat, lon);
             Android.Util.Log.Info("FindMyRiding", $"FindRidings fed={found.Federal?.NameEn} prov={found.Provincial?.NameEn}");
             return found;
         });
+        ShowResult(result, lat, lon, locationText);
+    }
 
+    async Task LoadFsaAsync(string fsaText)
+    {
+        SetStatus("Loading riding data…");
+        try
+        {
+            (RidingResult result, double lat, double lon) = await Task.Run(() =>
+            {
+                var tagger = EnsureTagger();
+                (double lat, double lon) = FsaCentroids.Get(fsaText);
+                var found = tagger.FindRidings(lat, lon);
+                Android.Util.Log.Info("FindMyRiding", $"FindRidingsByFsa({fsaText.Trim()}) fed={found.Federal?.NameEn} prov={found.Provincial?.NameEn}");
+                return (found, lat, lon);
+            });
+            ShowResult(result, lat, lon, $"Postal code: {fsaText.Trim()}");
+        }
+        catch (FormatException)
+        {
+            SetStatus("Error: invalid postal code — e.g. K1A or K1A 0B1.", error: true);
+        }
+        catch (KeyNotFoundException)
+        {
+            SetStatus("Error: FSA not in the 2021 census table.", error: true);
+        }
+    }
+
+    // Lazily loads the shared tagger (all datasets).
+    static RidingTagger EnsureTagger()
+    {
+        if (tagger is not null)
+            return tagger;
+        Android.Util.Log.Info("FindMyRiding", "Ensuring data root");
+        string dataRoot = RidingData.EnsureDataRoot();
+        // Publish only once fully loaded; a partially loaded tagger would
+        // miss datasets and report wrong "unknown" results.
+        var fresh = new RidingTagger();
+        foreach (var source in StandardDatasets.All(dataRoot))
+        {
+            fresh.Load(source);
+        }
+        tagger = fresh;
+        Android.Util.Log.Info("FindMyRiding", "Tagger loaded");
+        return fresh;
+    }
+
+    void ShowResult(RidingResult result, double lat, double lon, string locationText)
+    {
+        LocationLabel.Text = locationText;
         string fed = FormatRidingName(result.Federal), prov = FormatRidingName(result.Provincial);
         FederalIdLabel.Text = FormatRidingId(result.Federal);
         ProvincialIdLabel.Text = FormatRidingId(result.Provincial);
@@ -170,6 +232,10 @@ protected override void OnAppearing()
     static readonly Color DarkError = Color.FromHex("#FF8A94");
     static readonly Color LightValue = Color.FromHex("#1F2328");
     static readonly Color DarkValue = Color.FromHex("#F2F4F6");
+    static readonly Color LightChip = Color.FromHex("#E4E7EA");
+    static readonly Color DarkChip = Color.FromHex("#2A3037");
+    static readonly Color AccentTeal = Color.FromHex("#0F766E");
+    static readonly Color AccentTealDark = Color.FromHex("#14B8A6");
 
     void SetStatus(string text, bool error = false)
     {

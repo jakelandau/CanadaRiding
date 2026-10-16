@@ -51,11 +51,20 @@
             <Label Text="Check another location" Style="{StaticResource SectionHeading}" />
             <Frame Style="{StaticResource InputCard}" HorizontalOptions="Fill">
                 <VerticalStackLayout Spacing="10">
-                    <Grid ColumnDefinitions="*,*" ColumnSpacing="6">
+                    <Grid x:Name="CoordsGrid" ColumnDefinitions="*,*" ColumnSpacing="6">
                         <Entry x:Name="LatEntry" Grid.Column="0" Placeholder="Latitude"
                                Style="{StaticResource CoordEntry}" />
                         <Entry x:Name="LngEntry" Grid.Column="1" Placeholder="Longitude"
                                Style="{StaticResource CoordEntry}" />
+                    </Grid>
+                    <Entry x:Name="FsaEntry" IsVisible="False"
+                           Placeholder="Postal code (e.g. K1A or K1A 0B1)"
+                           Style="{StaticResource CoordEntry}" />
+                    <Grid ColumnDefinitions="*,*" ColumnSpacing="8">
+                        <Button x:Name="ModeLatLongButton" Grid.Column="0" Text="Lat / Long"
+                                Style="{StaticResource ModeChip}" Clicked="OnModeLatLongClicked" />
+                        <Button x:Name="ModeFsaButton" Grid.Column="1" Text="Postal code"
+                                Style="{StaticResource ModeChip}" Clicked="OnModeFsaClicked" />
                     </Grid>
                 </VerticalStackLayout>
             </Frame>

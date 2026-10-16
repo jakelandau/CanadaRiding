@@ -71,6 +71,14 @@
                 <Setter Property="BackgroundColor" Value="{AppThemeBinding Light=#1B4D8C, Dark=#3565A0}" />
                 <Setter Property="TextColor" Value="White" />
             </Style>
+            <Style x:Key="ModeChip" TargetType="Button">
+                <Setter Property="CornerRadius" Value="8" />
+                <Setter Property="HeightRequest" Value="38" />
+                <Setter Property="FontSize" Value="13" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Light=#E4E7EA, Dark=#2A3037}" />
+                <Setter Property="TextColor" Value="{AppThemeBinding Light=#1F2328, Dark=#F2F4F6}" />
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>
