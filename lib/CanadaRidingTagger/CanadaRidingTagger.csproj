@@ -37,6 +37,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="..\..\data\FsaCentroids.csv" LogicalName="CanadaRidingTagger.FsaCentroids.csv" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="README.md" Pack="true" PackagePath="\" />
     <Content Include="..\..\data\Shapefiles\Federal\**\*" Pack="true" PackageCopyToOutput="true" PackagePath="contentFiles\any\any\Shapefiles\Federal" />
     <Content Include="..\..\data\Shapefiles\Provincial\**\*" Pack="true" PackageCopyToOutput="true" PackagePath="contentFiles\any\any\Shapefiles\Provincial" />

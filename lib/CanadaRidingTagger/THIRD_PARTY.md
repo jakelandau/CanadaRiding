@@ -30,3 +30,9 @@ Python + `pyshp`, `pyproj`, `shapely` — used for data validation and ground-tr
 ## Data licenses (per dataset, not software)
 
 Each dataset under `Shapefiles/` carries its own data license from its source zip/page; per-dataset provenance (source URL, license, vintage status) is recorded in the README. Examples already known: BC BCGW order zip (`licence.txt` in zip), YT `OGL-Yukon-2.0`, PEI AGO layer (2017 order), NU Elections Nunavut (OGL).
+- `data/FsaCentroids.csv` (shipped as an embedded resource): 1,637 of 1,643
+  rows are verbatim from the geoview-api-geolocator FSA service
+  (https://github.com/Canadian-Geospatial-Platform/geoview-api-geolocator, MIT
+  licence); the remaining 6 are computed from the Statistics Canada 2021
+  Census Forward Sortation Area boundary file (92-179-X, Statistics Canada
+  Open Licence). Full provenance: README, "FSA centroid table".

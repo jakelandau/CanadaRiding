@@ -95,6 +95,25 @@ public sealed class RidingTagger
 
         return new RidingResult(jurisdiction, federal, provincial);
     }
+    /// <summary>
+    /// Finds the federal district and the province/territory district containing the
+    /// WGS84 centroid of the forward sortation area <paramref name="fsa"/>
+    /// (the first three characters of a Canadian postal code; a full postal code is
+    /// also accepted). Equivalent to <see cref="FindRidings(double, double)"/> at the
+    /// FSA's bundled centroid.
+    /// </summary>
+    /// <param name="fsa">The FSA or a full postal code, case-insensitive, optional surrounding whitespace.</param>
+    /// <returns>
+    /// The matching federal and subnational districts, as for <see cref="FindRidings(double, double)"/>.
+    /// </returns>
+    /// <exception cref="ArgumentNullException"><paramref name="fsa"/> is <c>null</c>.</exception>
+    /// <exception cref="FormatException"><paramref name="fsa"/> is not an FSA or full Canadian postal code.</exception>
+    /// <exception cref="KeyNotFoundException">The FSA is not in the bundled table.</exception>
+    public RidingResult FindRidingsByFsa(string fsa)
+    {
+        var (latitude, longitude) = FsaCentroids.Get(fsa);
+        return FindRidings(latitude, longitude);
+    }
 
     // The first district of <paramref name="dataset"/> containing the point, or null.
     // Districts tile their jurisdiction, so at most one candidate matches except exactly

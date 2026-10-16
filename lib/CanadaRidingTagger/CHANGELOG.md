@@ -14,6 +14,15 @@ All notable changes to **CanadaRidingTagger** are documented here.
         version from the tag; between tags, builds are a pre-release of the next
         patch. See CanadaRidingTagger.csproj for the MinVer config. -->
 
+- New `RidingTagger.FindRidingsByFsa(string)`: finds the federal riding and
+  province/territory district containing the WGS84 centroid of a Canadian
+  forward sortation area (FSA), from its first three characters. Accepts a bare
+  FSA (e.g. `K1A`) or a full postal code (e.g. `K1A 0B1`); case-insensitive.
+  The FSA->coordinate conversion is fully offline (bundled table, no network).
+- New `FsaCentroids` lookup: WGS84 centroids for all 1,643 FSAs of the 2021
+  Census Forward Sortation Area boundary file, bundled as an embedded resource
+  (`data/FsaCentroids.csv`). `Get` throws `KeyNotFoundException` for an
+  FSA not in the table; `TryGet` returns `false` for that case.
 - The subnational jurisdiction is now determined from the federal riding's
   two-digit code prefix (the Elections Canada federal numbering scheme) instead
   of whichever loaded provincial dataset contains the point, fixing cross-jurisdiction

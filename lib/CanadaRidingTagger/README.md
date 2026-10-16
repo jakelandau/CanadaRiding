@@ -13,6 +13,7 @@ public sealed class RidingTagger
 {
     public void Load(DistrictSource source);
     public RidingResult FindRidings(double latitude, double longitude);
+    public RidingResult FindRidingsByFsa(string fsa);
 }
 ```
 - `Load` reads one district dataset (shapefile or GeoJSON), indexes its geometries
@@ -25,6 +26,31 @@ public sealed class RidingTagger
   determined from the federal district's code (the Elections Canada federal
   numbering scheme); when the federal district cannot determine it, the loaded
   dataset covering the point decides.
+- `FindRidingsByFsa` takes a three-character forward sortation area (FSA), or
+  a full postal code, and returns the same result as `FindRidings` at the FSA's
+  WGS84 centroid (see [FSA lookup](#fsa-lookup-fsacentroids)). It accepts the
+  FSA with or without a following space-delimited digit-letter-digit
+  (e.g. `K1A` or `K1A 0B1`), case-insensitively, with optional surrounding
+  whitespace. `ArgumentNullException` for `null`; `FormatException` for
+  malformed input; `KeyNotFoundException` for an FSA not in the bundled
+  table.
+
+### FSA lookup (`FsaCentroids`)
+Convenience accessors for the bundled FSA centroid table, rooted at the
+first three characters of a Canadian postal code.
+```csharp
+public static class FsaCentroids
+{
+    public static int Count { get; }
+    public static (double Latitude, double Longitude) Get(string fsa);
+    public static bool TryGet(string fsa, out double latitude, out double longitude);
+}
+```
+- `Get` throws `KeyNotFoundException` for a well-formed FSA the table does
+  not cover; `TryGet` returns `false` in that case. Both accept a bare FSA or
+  a full postal code, case-insensitively, with optional surrounding
+  whitespace, and throw `ArgumentNullException` for `null` and
+  `FormatException` for malformed input.
 
 ### `StandardDatasets`
 Convenience accessors for the 14 standard datasets, rooted at a data directory
@@ -47,6 +73,7 @@ public static class StandardDatasets
 | `DistrictSource` | `(string Path, DatasetDefinition Definition, Jurisdiction? Jurisdiction)` | A loadable dataset: a file path plus its field definitions and jurisdiction. |
 | `Jurisdiction` | enum | The 13 subnational jurisdictions (`Alberta` … `Nunavut`). Federal is *not* a member — it is addressed separately. |
 | `FederalJurisdiction` | `static Jurisdiction? FromId(string)` | Maps a federal district id to its `Jurisdiction` (the code's first two digits), or `null` when unrecognized. |
+| `FsaCentroids` | `static int Count; static (double, double) Get(string); static bool TryGet(string, out double, out double)` | WGS84 centroid lookup for the bundled FSA table (see [FSA lookup](#fsa-lookup-fsacentroids)). |
 
 ## Usage
 ```csharp
@@ -62,6 +89,9 @@ RidingResult r = tagger.FindRidings(latitude: 43.6975888422, longitude: -79.7291
 // r.Federal     -> District "Brampton Centre" (federal riding)
 // r.Provincial  -> District for the point in Ontario
 // r.Jurisdiction-> Jurisdiction.Ontario
+
+RidingResult fsa = tagger.FindRidingsByFsa("K1A");
+// fsa.Federal     -> District "Ottawa—Vanier—Gloucester" (the K1A FSA centroid)
 ```
 
 ## Bundled datasets
@@ -94,6 +124,28 @@ Notes:
 - The Quebec shapefile directory name contains an accented `é`
   (`circonscriptions_électorales_2026_shapefile`) — keep it as-is when copying data.
 
+## FSA centroid table
+
+In addition to the 14 shapefile datasets, the library bundles
+`data/FsaCentroids.csv` as an embedded assembly resource — one WGS84 centroid
+(latitude, longitude) per Canadian forward sortation area (FSA).
+
+- Coverage: all 1,643 FSAs of the 2021 Census Forward Sortation Area
+  Boundary File (Statistics Canada product 92-179-X).
+- Provenance: 1,637 values are verbatim from the geoview-api-geolocator FSA
+  service (transposed offline from its live index). The remaining six —
+  `R0A`, `G2A`, `S9X`, `L8H`, `J3Y`, `L8G` — are not covered by that
+  service; their values are computed as the centroid of the StatCan CFSA
+  polygon, reprojected to WGS84. The build script verifies the method
+  on a sample of 13 covered areas: 12 agree with the geolocator values to
+  within ~1 m and one (`X0A`) within ~30 m — i.e. the geolocator values
+  are centroids of the same StatCan geometry.
+- Source data: Statistics Canada, 2021 Census Forward Sortation Area
+  Boundary File (92-179-X), served by StatCan's ArcGIS REST service
+  (`geo.statcan.gc.ca`), under the Statistics Canada Open Licence.
+  The one-off build script is `tools/build_fsa_centroids.py` (see
+  `tools/geolocator_hits.csv` for the verbatim geolocator sweep).
+
 ## Layout
 - `src/` — library source. `RidingTagger` and the public records are top-level in
   `CanadaRidingTagger`; projection math lives in `CanadaRidingTagger.Projections`
@@ -102,6 +154,9 @@ Notes:
 - The bundled datasets live at the monorepo root, in `data/Shapefiles/`
   (see the table above); the package ships them under
   `contentFiles/any/any/Shapefiles/`.
+- `data/FsaCentroids.csv` — the bundled FSA centroid table (see
+  [FSA centroid table](#fsa-centroid-table)); shipped as an embedded
+  assembly resource, not a package content file.
 - `tools/` — development scripts: `gen_fixtures.py` (regenerates the test
   fixture CSVs), `ridingparser.py` (legacy KML parser), and diagnostic helpers.
 

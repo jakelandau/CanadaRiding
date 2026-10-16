@@ -14,6 +14,8 @@ tmp_dl/
 maps_mb.html
 maps_sk.html
 .scratch/
+__pycache__/
+lib/CanadaRidingTagger/tools/.fsa_centroid_cache.json
 
 # Packed packages (regenerate with dotnet pack)
 *.nupkg
