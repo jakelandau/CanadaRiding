@@ -14,10 +14,10 @@
                            MaximumWidthRequest="440">
         <VerticalStackLayout Spacing="4" HorizontalOptions="Center">
             <Label Text="FindMyRiding" Style="{StaticResource PageTitle}" />
-            <Label Text="Which riding are you in?" Style="{StaticResource MutedSmall}" HorizontalTextAlignment="Center" />
+            <Label Text="Which riding are you in?" Style="{StaticResource MutedSmall}" FontSize="15" HorizontalTextAlignment="Center" />
         </VerticalStackLayout>
 
-        <Frame Style="{StaticResource RidingCard}" HorizontalOptions="Fill">
+        <Frame Style="{StaticResource RidingCard}" Margin="0,20,0,0" HorizontalOptions="Fill">
             <VerticalStackLayout Spacing="16">
                 <VerticalStackLayout Spacing="4">
                     <Grid ColumnDefinitions="*,Auto">

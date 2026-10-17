@@ -18,7 +18,7 @@
 
             <!-- Typography -->
             <Style x:Key="PageTitle" TargetType="Label">
-                <Setter Property="FontSize" Value="30" />
+                <Setter Property="FontSize" Value="37.5" />
                 <Setter Property="FontAttributes" Value="Bold" />
                 <Setter Property="HorizontalTextAlignment" Value="Center" />
             </Style>
