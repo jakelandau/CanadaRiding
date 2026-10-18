@@ -1,0 +1,49 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  lib:
+    runs-on: ubuntu-latest
+    steps:
+      # Hosted runners ship git-lfs, so the LFS shapefiles in data/ are
+      # smudged automatically on checkout.
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+
+      # Target the test csproj, not the slnx — the slnx pulls in the MAUI app
+      # (needs the android workload) and the harness project.
+      - run: dotnet test lib/CanadaRidingTagger/tests/CanadaRidingTagger.Tests/CanadaRidingTagger.Tests.csproj
+
+      # Pack without publishing: verifies the shapefile Content/PackagePath
+      # globs still resolve against data/ on a fresh checkout.
+      - run: dotnet pack lib/CanadaRidingTagger/CanadaRidingTagger.csproj -c Release
+        shell: bash
+
+  app:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - uses: android-actions/setup-android@v3
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+
+      - run: dotnet workload install maui-android
+
+      # Debug for PR feedback — the Release config enables AOT (see csproj),
+      # which is slow here; the release job covers the AOT path.
+      - run: dotnet build app/FindMyRiding/FindMyRidingApp.csproj -c Debug
