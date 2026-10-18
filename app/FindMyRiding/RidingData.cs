@@ -12,18 +12,23 @@ internal static class RidingData
 {
     const string AssetRoot = "Shapefiles";
 
+    // Bumped when the bundled asset set changes so existing installs re-extract
+    // instead of trusting a stale marker (e.g. installs predating the bundled
+    // past-vintage KMLs).
+    const string MarkerValue = "v2-vintages";
+
     public static string EnsureDataRoot()
     {
         string dataRoot = Path.Combine(FileSystem.AppDataDirectory, AssetRoot);
         string marker = Path.Combine(dataRoot, ".extracted");
-        if (File.Exists(marker))
+        if (File.Exists(marker) && File.ReadAllText(marker) == MarkerValue)
         {
             return dataRoot;
         }
 
         CopyTree(Android.App.Application.Context.Assets, AssetRoot, dataRoot);
         RenameQuebecDir(dataRoot);
-        File.WriteAllText(marker, "ok");
+        File.WriteAllText(marker, MarkerValue);
         return dataRoot;
     }
 

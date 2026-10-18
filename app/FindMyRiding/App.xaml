@@ -55,6 +55,12 @@
                 <Setter Property="TextColor" Value="{AppThemeBinding Light=#1F2328, Dark=#F2F4F6}" />
                 <Setter Property="PlaceholderColor" Value="{AppThemeBinding Light=#9AA0A6, Dark=#6F767E}" />
             </Style>
+            <Style x:Key="VintagePicker" TargetType="Picker">
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Light=#FFFFFF, Dark=#1C2127}" />
+                <Setter Property="TextColor" Value="{AppThemeBinding Light=#1F2328, Dark=#F2F4F6}" />
+                <Setter Property="TitleColor" Value="{AppThemeBinding Light=#9AA0A6, Dark=#6F767E}" />
+                <Setter Property="HeightRequest" Value="48" />
+            </Style>
 
             <!-- Buttons -->
             <Style x:Key="PrimaryButton" TargetType="Button">

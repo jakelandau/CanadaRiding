@@ -10,6 +10,17 @@ public partial class IndexPage : ContentPage
     double? _manualLat, _manualLon;
     bool _fsaMode;
 
+    // Last displayed result: coordinates are retained so the vintage pickers can
+    // re-resolve the same point against a past distribution.
+    double? _lastLat, _lastLon;
+    string _lastLocationText = "";
+    int? _federalYear, _provincialYear;
+    bool _updatingPickers;
+
+    // Picker items are "Current (year)" plus past years, newest first; these hold
+    // the year per picker-item index (index 0 = current map).
+    readonly List<int> _federalYears = [], _provincialYears = [];
+
     public IndexPage()
     {
         InitializeComponent();
@@ -43,6 +54,8 @@ protected override void OnAppearing()
                 var position = await geo.GetLocationAsync(new GeolocationRequest(GeolocationAccuracy.High));
                 lat = position.Latitude;
                 lon = position.Longitude;
+                _manualLat = lat;
+                _manualLon = lon;
                 Android.Util.Log.Info("FindMyRiding", $"Location: {lat}, {lon}");
             }
             await LoadRidingsAsync(lat.Value, lon.Value, $"Location: {lat:0.0000}, {lon:0.0000}");
@@ -126,6 +139,9 @@ protected override void OnAppearing()
     async Task LoadRidingsAsync(double lat, double lon, string locationText)
     {
         SetStatus("Loading riding data…");
+        // A fresh lookup starts on the current maps; vintage selections only
+        // apply while re-resolving the last displayed point.
+        _federalYear = _provincialYear = null;
         RidingResult result = await Task.Run(() =>
         {
             var found = EnsureTagger().FindRidings(lat, lon);
@@ -148,6 +164,8 @@ protected override void OnAppearing()
                 Android.Util.Log.Info("FindMyRiding", $"FindRidingsByFsa({fsaText.Trim()}) fed={found.Federal?.NameEn} prov={found.Provincial?.NameEn}");
                 return (found, lat, lon);
             });
+            _manualLat = lat;
+            _manualLon = lon;
             ShowResult(result, lat, lon, $"Postal code: {fsaText.Trim()}");
         }
         catch (FormatException)
@@ -170,7 +188,7 @@ protected override void OnAppearing()
         // Publish only once fully loaded; a partially loaded tagger would
         // miss datasets and report wrong "unknown" results.
         var fresh = new RidingTagger();
-        foreach (var source in StandardDatasets.All(dataRoot))
+        foreach (var source in StandardDatasets.AllVintages(dataRoot))
         {
             fresh.Load(source);
         }
@@ -181,6 +199,9 @@ protected override void OnAppearing()
 
     void ShowResult(RidingResult result, double lat, double lon, string locationText)
     {
+        _lastLat = lat;
+        _lastLon = lon;
+        _lastLocationText = locationText;
         LocationLabel.Text = locationText;
         string fed = FormatRidingName(result.Federal), prov = FormatRidingName(result.Provincial);
         FederalIdLabel.Text = FormatRidingId(result.Federal);
@@ -192,7 +213,82 @@ protected override void OnAppearing()
             : $"{result.Jurisdiction.Value.DisplayName()} RIDING".ToUpperInvariant();
         double km = DistanceKm(lat, lon, CentreBlockLat, CentreBlockLon);
         SetStatus($"{FormatDistanceKm(km)} from Parliament Hill");
+        UpdateVintagePickers(result.Jurisdiction);
         Android.Util.Log.Info("FindMyRiding", $"Labels set fed={fed} prov={prov}");
+    }
+
+    // Rebuilds the vintage pickers with the map years loaded for the result's
+    // jurisdiction, keeping a selection that is still available.
+    void UpdateVintagePickers(Jurisdiction? jurisdiction)
+    {
+        var t = EnsureTagger();
+        _updatingPickers = true;
+        try
+        {
+            SetVintagePicker(FederalYearPicker, _federalYears, t.Vintages(null), ref _federalYear);
+            SetVintagePicker(ProvincialYearPicker, _provincialYears,
+                jurisdiction is null ? Array.Empty<int>() : t.Vintages(jurisdiction.Value), ref _provincialYear);
+            VintageGrid.IsVisible = true;
+        }
+        finally
+        {
+            _updatingPickers = false;
+        }
+    }
+
+    static void SetVintagePicker(Picker picker, List<int> years, IReadOnlyList<int> vintages, ref int? selection)
+    {
+        years.Clear();
+        var items = new List<string>();
+        if (vintages.Count == 0)
+        {
+            items.Add("Current");
+            years.Add(0);
+        }
+        else
+        {
+            int current = vintages[^1];
+            items.Add($"Current ({current})");
+            years.Add(current);
+            for (int i = vintages.Count - 2; i >= 0; i--)
+            {
+                items.Add(vintages[i].ToString());
+                years.Add(vintages[i]);
+            }
+        }
+        int index = selection is null ? 0 : Math.Max(0, years.IndexOf(selection.Value));
+        picker.ItemsSource = items;
+        picker.SelectedIndex = index;
+        picker.Title = items[index];
+    }
+
+    // Re-resolves the last displayed point against the picked map years.
+    async void OnVintagePickerChanged(object? sender, EventArgs e)
+    {
+        if (_updatingPickers || _lastLat is null || _lastLon is null)
+            return;
+        int? federalYear = PickerYear(FederalYearPicker, _federalYears);
+        int? provincialYear = PickerYear(ProvincialYearPicker, _provincialYears);
+        _federalYear = federalYear;
+        _provincialYear = provincialYear;
+        double lat = _lastLat.Value, lon = _lastLon.Value;
+        SetStatus("Loading riding data…");
+        try
+        {
+            RidingResult result = await Task.Run(() => EnsureTagger().FindRidings(lat, lon, federalYear, provincialYear));
+            ShowResult(result, lat, lon, _lastLocationText);
+        }
+        catch (ArgumentException ex)
+        {
+            Android.Util.Log.Error("FindMyRiding", "Vintage re-resolve error: " + ex);
+            SetStatus($"Error: {ex.Message}", error: true);
+        }
+    }
+
+    static int? PickerYear(Picker picker, List<int> years)
+    {
+        int index = picker.SelectedIndex;
+        return index > 0 && index < years.Count ? years[index] : null;
     }
 
     // Dataset id number shown beside the section heading ("No. N/A" for jurisdictions

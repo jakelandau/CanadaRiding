@@ -41,6 +41,19 @@
                     <Label x:Name="ProvincialLabel" Text="…" Style="{StaticResource ResultValue}" />
                 </VerticalStackLayout>
                 <Label x:Name="LocationLabel" Style="{StaticResource MutedSmall}" />
+                <Grid x:Name="VintageGrid" ColumnDefinitions="*,*" ColumnSpacing="12" IsVisible="False">
+                    <VerticalStackLayout Grid.Column="0" Spacing="4">
+                        <Label Text="FEDERAL MAP" Style="{StaticResource SectionHeading}" />
+                        <Picker x:Name="FederalYearPicker" Style="{StaticResource VintagePicker}"
+                                Title="Current" SelectedIndexChanged="OnVintagePickerChanged" />
+                    </VerticalStackLayout>
+                    <VerticalStackLayout Grid.Column="1" Spacing="4">
+                        <Label x:Name="ProvincialMapHeading" Text="PROVINCIAL MAP"
+                               Style="{StaticResource SectionHeading}" />
+                        <Picker x:Name="ProvincialYearPicker" Style="{StaticResource VintagePicker}"
+                                Title="Current" SelectedIndexChanged="OnVintagePickerChanged" />
+                    </VerticalStackLayout>
+                </Grid>
             </VerticalStackLayout>
         </Frame>
 
