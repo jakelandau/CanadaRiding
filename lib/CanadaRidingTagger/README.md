@@ -12,8 +12,10 @@ call it from any program; it is not an executable.
 public sealed class RidingTagger
 {
     public void Load(DistrictSource source);
-    public RidingResult FindRidings(double latitude, double longitude);
-    public RidingResult FindRidingsByFsa(string fsa);
+    public RidingResult FindRidings(double latitude, double longitude, int? federalYear = null, int? provincialYear = null);
+    public RidingResult FindRidingsByFsa(string fsa, int? federalYear = null, int? provincialYear = null);
+    public IReadOnlyList<int> Vintages(Jurisdiction? jurisdiction);
+    public int? CurrentYear(Jurisdiction? jurisdiction);
 }
 ```
 - `Load` reads one district dataset (shapefile or GeoJSON), indexes its geometries
@@ -21,19 +23,27 @@ public sealed class RidingTagger
   (or federal, when `null`). Call it once per dataset. Loading is cheap to build;
   the index is per-dataset.
 - `FindRidings` returns the federal district and the provincial/territorial
-  district that cover the point. Each is `null` when no such district is loaded
+  district that cover the point, for the selected map vintages. `federalYear`
+  / `provincialYear` select a specific vintage (an explicit year that is not
+  loaded throws `ArgumentException`); when omitted, the most recent loaded
+  vintage is used. Each district is `null` when no such district is loaded
   or the point lies outside every district. The subnational `Jurisdiction` is
   determined from the federal district's code (the Elections Canada federal
   numbering scheme); when the federal district cannot determine it, the loaded
   dataset covering the point decides.
+- `Vintages(jurisdiction)` lists the loaded map years for a jurisdiction
+  (ascending); `CurrentYear(jurisdiction)` is the most recent loaded year.
+  A `null` jurisdiction addresses the federal jurisdiction.
+
 - `FindRidingsByFsa` takes a three-character forward sortation area (FSA), or
   a full postal code, and returns the same result as `FindRidings` at the FSA's
-  WGS84 centroid (see [FSA lookup](#fsa-lookup-fsacentroids)). It accepts the
-  FSA with or without a following space-delimited digit-letter-digit
-  (e.g. `K1A` or `K1A 0B1`), case-insensitively, with optional surrounding
-  whitespace. `ArgumentNullException` for `null`; `FormatException` for
-  malformed input; `KeyNotFoundException` for an FSA not in the bundled
-  table.
+  WGS84 centroid (see [FSA lookup](#fsa-lookup-fsacentroids)).
+  `federalYear` / `provincialYear` select the vintage exactly as in
+  `FindRidings`. It accepts the FSA with or without a following
+  space-delimited digit-letter-digit (e.g. `K1A` or `K1A 0B1`),
+  case-insensitively, with optional surrounding whitespace.
+  `ArgumentNullException` for `null`; `FormatException` for malformed input;
+  `KeyNotFoundException` for an FSA not in the bundled table.
 
 ### FSA lookup (`FsaCentroids`)
 Convenience accessors for the bundled FSA centroid table, rooted at the
@@ -59,10 +69,17 @@ that contains `Federal/`, `Provincial/`, and `Territorial/`.
 public static class StandardDatasets
 {
     public static IReadOnlyList<DistrictSource> All(string dataRoot);
+    public static IReadOnlyList<DistrictSource> AllVintages(string dataRoot);
     public static DistrictSource Federal(string dataRoot);
     public static DistrictSource Source(string dataRoot, Jurisdiction jurisdiction);
+    public static IReadOnlyList<DistrictSource> VintagesFor(string dataRoot, Jurisdiction jurisdiction);
+    public static IReadOnlyList<DistrictSource> PastVintagesFor(string dataRoot, Jurisdiction jurisdiction);
 }
 ```
+
+- `All` is the 14 current maps; `AllVintages` adds the bundled past vintages
+  (see [Bundled datasets](#bundled-datasets)). `VintagesFor` /
+  `PastVintagesFor` return a single jurisdiction's datasets across years.
 
 ### Records / types
 | Type | Shape | Meaning |
@@ -70,7 +87,7 @@ public static class StandardDatasets
 | `RidingResult` | `(Jurisdiction? Jurisdiction, District? Federal, District? Provincial)` | Result of one query. `Jurisdiction`/`Provincial` describe the subnational district; `Federal` the federal riding. |
 | `District` | `(string Id, string NameEn, string? NameFr)` | One electoral district. `Id` is `null`/name-derived when the source has no id field. |
 | `DatasetDefinition` | `(string? IdField, string NameEn, string? NameFr)` | Attribute-field names a dataset uses for id / English name / French name. |
-| `DistrictSource` | `(string Path, DatasetDefinition Definition, Jurisdiction? Jurisdiction)` | A loadable dataset: a file path plus its field definitions and jurisdiction. |
+| `DistrictSource` | `(string Path, DatasetDefinition Definition, Jurisdiction? Jurisdiction, int? Year = null)` | A loadable dataset: a file path plus its field definitions, jurisdiction, and the general-election year the map is in effect for (`null` when unversioned). |
 | `Jurisdiction` | enum | The 13 subnational jurisdictions (`Alberta` … `Nunavut`). Federal is *not* a member — it is addressed separately. |
 | `FederalJurisdiction` | `static Jurisdiction? FromId(string)` | Maps a federal district id to its `Jurisdiction` (the code's first two digits), or `null` when unrecognized. |
 | `FsaCentroids` | `static int Count; static (double, double) Get(string); static bool TryGet(string, out double, out double)` | WGS84 centroid lookup for the bundled FSA table (see [FSA lookup](#fsa-lookup-fsacentroids)). |
@@ -82,7 +99,7 @@ using CanadaRidingTagger;
 string dataRoot = Path.Combine(AppContext.BaseDirectory, "Shapefiles");
 
 var tagger = new RidingTagger();
-foreach (var source in StandardDatasets.All(dataRoot))
+foreach (var source in StandardDatasets.AllVintages(dataRoot))
     tagger.Load(source);
 
 RidingResult r = tagger.FindRidings(latitude: 43.6975888422, longitude: -79.72916262);
@@ -90,13 +107,19 @@ RidingResult r = tagger.FindRidings(latitude: 43.6975888422, longitude: -79.7291
 // r.Provincial  -> District for the point in Ontario
 // r.Jurisdiction-> Jurisdiction.Ontario
 
+// A past vintage (requires that vintage's dataset to be loaded):
+RidingResult past = tagger.FindRidings(latitude: 44.6489, longitude: -63.5752, provincialYear: 2021);
+// past.Provincial -> District for the point in Nova Scotia's 2021 map
+// past.Federal   -> the federal district (no past federal vintage is bundled)
+
 RidingResult fsa = tagger.FindRidingsByFsa("K1A");
 // fsa.Federal     -> District "Ottawa—Vanier—Gloucester" (the K1A FSA centroid)
 ```
 
 ## Bundled datasets
 
-14 datasets: one federal, and one for each of the 10 provinces and 3 territories.
+The 14 current datasets (one federal, and one for each of the 10 provinces and
+3 territories), plus three past vintages below.
 Paths are relative to the data root (`Shapefiles/`). The federal shapefile and
 the Ontario shapefile live under nested directories.
 
@@ -117,10 +140,20 @@ the Ontario shapefile live under nested directories.
 | Prince Edward Island | `Provincial/PEI/Electoral_District_Boundaries.shp` | `DIST_NO` | `DISTRICT` | — |
 | Quebec | `Provincial/QC/circonscriptions_électorales_2026_shapefile/Circonscription_electorales_2026_shapefile.shp` | `CO_CEP` | `NM_CEP` | — |
 
+Past vintages — earlier distributions, bundled as KML (loaded via
+`StandardDatasets.AllVintages`):
+
+| Jurisdiction | Year | File | Id field | English name field | French name field |
+|---|---|---|---|---|---|
+| Nova Scotia | 2021 | `2019NovaScotia.kml` | `ED_NO` | `ED_NAME` | — |
+| Yukon | 2021 | `2021Yukon.kml` | — | `ELECT_NAME` | `FR_ELECNAM` |
+| Quebec | 2022 | `2022Quebec.kml` | — | `NM_CEP` | — |
+
 Notes:
 - The three territories (Nunavut, Northwest Territories, Yukon) have no numeric
   id field, so their `District.Id` is derived from the English name.
-- All bundled datasets are ESRI shapefiles; the reader is selected by file extension.
+- The current maps are ESRI shapefiles; the past vintages are KML. The reader
+  is selected by file extension.
 - The Quebec shapefile directory name contains an accented `é`
   (`circonscriptions_électorales_2026_shapefile`) — keep it as-is when copying data.
 
@@ -152,8 +185,9 @@ In addition to the 14 shapefile datasets, the library bundles
   (internal) and format readers in `CanadaRidingTagger.Readers` (internal).
 - `tests/CanadaRidingTagger.Tests/` — unit + integration tests.
 - The bundled datasets live at the monorepo root, in `data/Shapefiles/`
-  (see the table above); the package ships them under
-  `contentFiles/any/any/Shapefiles/`.
+  (see the tables above). The package ships the 14 current shapefiles under
+  `contentFiles/any/any/Shapefiles/{Federal,Provincial,Territorial}/` and the
+  three past-vintage KMLs at `contentFiles/any/any/Shapefiles/`.
 - `data/FsaCentroids.csv` — the bundled FSA centroid table (see
   [FSA centroid table](#fsa-centroid-table)); shipped as an embedded
   assembly resource, not a package content file.

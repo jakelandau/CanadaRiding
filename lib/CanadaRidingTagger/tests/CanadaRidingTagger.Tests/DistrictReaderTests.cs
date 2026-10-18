@@ -235,6 +235,95 @@ public class DistrictReaderTests
         Assert.IsType<Polygon>(districts[2].Geometry);
     }
 
+    [Fact]
+    public void Kml_StripsUtf8Bom()
+    {
+        var dir = Directory.CreateTempSubdirectory();
+        string path = Path.Combine(dir.FullName, "bom.kml");
+        string kml = """
+        <?xml version="1.0" encoding="UTF-8"?>
+        <kml xmlns="http://www.opengis.net/kml/2.2">
+         <Document>
+          <Placemark>
+           <ExtendedData>
+            <SimpleData name="NAME_EN">Bom District</SimpleData>
+           </ExtendedData>
+           <Polygon><outerBoundaryIs><LinearRing><coordinates>
+            -75.0,45.0,0
+            -75.0,46.0,0
+            -74.0,46.0,0
+            -75.0,45.0,0
+           </coordinates></LinearRing></outerBoundaryIs></Polygon>
+          </Placemark>
+         </Document>
+        </kml>
+        """;
+        // EF BB BF: a UTF-8 BOM, as emitted e.g. by the QGIS/KML export of the
+        // 2018 Manitoba poll-division KML.
+        File.WriteAllBytes(path, [0xEF, 0xBB, 0xBF, ..Encoding.UTF8.GetBytes(kml)]);
+
+        var districts = DistrictReader.Read(new DistrictSource(
+            path, new DatasetDefinition(null, "NAME_EN", null), null));
+
+        DistrictGeometry district = Assert.Single(districts);
+        Assert.Equal("Bom District", district.District.NameEn);
+        Assert.IsType<Polygon>(district.Geometry);
+    }
+
+    [Fact]
+    public void Kml_SkipsUnnamedPlacemarks()
+    {
+        var dir = Directory.CreateTempSubdirectory();
+        string path = Path.Combine(dir.FullName, "unnamed.kml");
+        File.WriteAllText(path, """
+        <?xml version="1.0" encoding="UTF-8"?>
+        <kml xmlns="http://www.opengis.net/kml/2.2">
+         <Document>
+          <Placemark>
+           <ExtendedData>
+            <SimpleData name="NAME_EN">Named District</SimpleData>
+           </ExtendedData>
+           <Polygon><outerBoundaryIs><LinearRing><coordinates>
+            -75.0,45.0,0
+            -75.0,46.0,0
+            -74.0,46.0,0
+            -75.0,45.0,0
+           </coordinates></LinearRing></outerBoundaryIs></Polygon>
+          </Placemark>
+          <Placemark>
+           <ExtendedData>
+            <SimpleData name="NAME_EN"></SimpleData>
+            <SimpleData name="DIST_NO">0</SimpleData>
+           </ExtendedData>
+           <Polygon><outerBoundaryIs><LinearRing><coordinates>
+            -74.0,45.0,0
+            -74.0,46.0,0
+            -73.0,46.0,0
+            -74.0,45.0,0
+           </coordinates></LinearRing></outerBoundaryIs></Polygon>
+          </Placemark>
+          <Placemark>
+           <name>PlacemarkName District</name>
+           <Polygon><outerBoundaryIs><LinearRing><coordinates>
+            -75.0,43.0,0
+            -75.0,44.0,0
+            -74.0,44.0,0
+            -75.0,43.0,0
+           </coordinates></LinearRing></outerBoundaryIs></Polygon>
+          </Placemark>
+         </Document>
+        </kml>
+        """);
+
+        var districts = DistrictReader.Read(new DistrictSource(
+            path, new DatasetDefinition(null, "NAME_EN", null), null));
+
+        // The empty-name placemark is skipped; the <name>-only placemark is kept.
+        Assert.Equal(2, districts.Count);
+        Assert.Equal("Named District", districts[0].District.NameEn);
+        Assert.Equal("PlacemarkName District", districts[1].District.NameEn);
+    }
+
     // --- dispatcher --------------------------------------------------------
 
     [Fact]

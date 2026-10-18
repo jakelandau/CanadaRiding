@@ -11,4 +11,9 @@ namespace CanadaRidingTagger;
 /// <param name="Jurisdiction">
 /// The subnational jurisdiction this dataset represents, or <c>null</c> for a federal dataset.
 /// </param>
-public sealed record DistrictSource(string Path, DatasetDefinition Definition, Jurisdiction? Jurisdiction);
+/// <param name="Year">
+/// The general-election year for which this map is or was in effect, or <c>null</c> for an
+/// unversioned dataset. When a jurisdiction has versioned datasets loaded, <c>null</c> datasets
+/// for that jurisdiction are not the answer to current-vintage queries.
+/// </param>
+public sealed record DistrictSource(string Path, DatasetDefinition Definition, Jurisdiction? Jurisdiction, int? Year = null);
