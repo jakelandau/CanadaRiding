@@ -14,6 +14,8 @@ All notable changes to **CanadaRidingTagger** are documented here.
         version from the tag; between tags, builds are a pre-release of the next
         patch. See CanadaRidingTagger.csproj for the MinVer config. -->
 
+## [0.2.0] - 2026-10-18
+
 - New `RidingTagger.FindRidingsByFsa(string)`: finds the federal riding and
   province/territory district containing the WGS84 centroid of a Canadian
   forward sortation area (FSA), from its first three characters. Accepts a bare
