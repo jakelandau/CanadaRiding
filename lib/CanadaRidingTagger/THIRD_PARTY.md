@@ -27,6 +27,15 @@ PROJ 9.5.1 sources were also extracted for cross-checking (same MIT terms). All 
 
 Python + `pyshp`, `pyproj`, `shapely` — used for data validation and ground-truth cross-checks during development; `tools/*.py` throwaway scripts.
 
+| Package | Version | License |
+| --- | --- | --- |
+| MinVer | 8.0.0 | Apache-2.0 |
+| Microsoft.NET.Test.Sdk | 17.12.0 | MIT |
+| xunit | 2.9.2 | Apache-2.0 |
+| xunit.runner.visualstudio | 2.8.2 | Apache-2.0 |
+
+Build/test-only NuGet packages: MinVer derives the package version from git tags at build time; the xunit trio runs the test suite. Verified 2026-10-18 from nuspec license metadata in the local NuGet cache.
+
 ## Data licenses (per dataset, not software)
 
 Each dataset under `Shapefiles/` carries its own data license from its source zip/page; per-dataset provenance (source URL, license, vintage status) is recorded in the README. Examples already known: BC BCGW order zip (`licence.txt` in zip), YT `OGL-Yukon-2.0`, PEI AGO layer (2017 order), NU Elections Nunavut (OGL).
