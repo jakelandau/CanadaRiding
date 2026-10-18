@@ -1,7 +1,9 @@
 # CanadaRiding
 
-Monorepo for the Canadian electoral-riding identification library and the
-MAUI app that demonstrates it.
+Monorepo coded in C# / .NET 10 LTS with AI assistance, featuring two core software products:
+
+Furthermore, this README file has been revised with my fleshy human fingers, since I'm a writer by trade and it would be embarrassing not to, but using the AI-established layout so it doesn't get confused reflecting on my words when performing agentic tasks using the README as a reference.
+
 
 ## Layout
 
@@ -10,12 +12,12 @@ MAUI app that demonstrates it.
 - `app/FindMyRiding/` — the .NET MAUI (`net10.0-android`) app, which ships the
   datasets as Android assets and consumes the library via a project reference.
   `harness/` is a console app that loads every dataset and answers a point
-  query (end-to-end smoke test); `tools/` holds the Android tooling — adb,
-  diagnostic scripts, and `wlsrc/`, the offline MAUI/Android workload install
-  kit.
+  query (end-to-end smoke test); `tools/` holds various tooling and diagnostic
+  scripts, and `wlsrc/`, the offline MAUI/Android workload install kit.
 - `data/Shapefiles/` — the single source of truth for all 14 electoral-boundary
   datasets (`Federal/`, `Provincial/`, `Territorial/`), shared by the library,
-  the app, and the harness.
+  the app, and the harness. Pull requests seeking to merge additional data sources
+  or correct flaws in the existing data sources are not only welcome, but encouraged.
 
 ## Building
 
@@ -26,8 +28,8 @@ dotnet pack lib/CanadaRidingTagger/CanadaRidingTagger.csproj -c Release
 dotnet run --project app/FindMyRiding/harness
 ```
 
-The app build requires the MAUI and Android workloads
-(`dotnet workload install maui-android android` — or the offline kit under
+Building the MAUI app with Android as the target requires the MAUI and Android workloads,
+using  (`dotnet workload install maui-android android`) or the offline kit under
 `app/FindMyRiding/tools/wlsrc/`).
 
 ## Publishing an APK
@@ -43,17 +45,21 @@ Publish profile: `app/FindMyRiding/Properties/PublishProfiles/FindMyRidingApp.Si
 dotnet publish app/FindMyRiding/FindMyRidingApp.csproj -c Release -r android-arm64 -p:PublishProfile=FindMyRidingApp.Sideloader.pubxml
 ```
 
-Installable APK: `app/FindMyRiding/bin/Release/net10.0-android/android-arm64/sideload/com.findmyriding.app-Signed.apk`.
-It is signed with the local debug keystore — fine for sideloading, not for a
-store.
+Installable APK is located at: `app/FindMyRiding/bin/Release/net10.0-android/android-arm64/sideload/com.findmyriding.app-Signed.apk`.
+
+It is signed with the local debug keystore — fine for sideloading, not for upload
+to any Android storefront. You may receive a warning from Play Protect as the
+local debug keystore is not recognized, but you can select "Install Anyway".
 
 ## Sideload
 
 Requires an arm64 phone running Android 8.0 (API 26) or newer.
 
-- Copy the APK to the device and tap to install, or over USB:
+- Copy the APK to the device and tap to install
+- Over USB, using ADB:
   `app/FindMyRiding/tools/platform-tools/adb install -r com.findmyriding.app-Signed.apk`
-- First launch extracts the bundled shapefiles into app data (cached under a
+
+On first launch, the bundled shapefiles extract into app data (cached under a
   `.extracted` marker). Uninstall the app for a clean asset test.
 
 ## APK size
@@ -63,15 +69,6 @@ Only the files the app reads are shipped as assets: per dataset it opens
 (`.zip`), duplicate encodings (`.geojson`/`.kml`), and metadata
 (`.pdf`/`.docx`/`.xml`/`.sbn`/`.sbx`) from `data/Shapefiles/` (see the
 `AndroidAsset` items in the csproj).
-
-| Build | APK (signed) |
-|---|---|
-| Release, all assets (before) | 148,057,202 B (~148 MB) |
-| Release, asset exclusions (after) | 78,423,690 B (~78 MB) |
-| Release, asset exclusions + AOT (final) | 81,961,057 B (~82 MB) |
-
-Shapefiles make up ~62 MB of the resulting APK (14 datasets, `.shp`/`.dbf`/`.shx`/
-  `.cpg`); the rest is the runtime, dex, and resources.
 
 ## AOT and trimming
 
@@ -103,3 +100,17 @@ Shapefiles make up ~62 MB of the resulting APK (14 datasets, `.shp`/`.dbf`/`.shx
   Windows, so the app links the QC shapefiles under an ASCII directory name and
   renames them back at runtime (see `app/FindMyRiding/RidingData.cs`). Keep the
   real directory name as-is.
+
+## Contribution Policy
+
+Contributions to this project are welcome, both from humans and our AI friends!
+Please send your pull requests to the `dev` branch of this repository, which represent
+the upstream of `main`, the current release version. Previous release versions are frozen
+as branches named `release-vX.Y.Z`. 
+
+## License
+
+The licenses of the `CanadaRidingTagger` library and the `FindMyRiding` app are
+not the same; they can each be found in the `LICENSE` file in their respective folders. The
+licenses for third-party libraries and data products can be found in the `THIRD_PARTY` 
+files, also in their respective folders in the monorepo.
