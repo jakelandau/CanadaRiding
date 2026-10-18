@@ -100,3 +100,17 @@ Only the files the app reads are shipped as assets: per dataset it opens
   Windows, so the app links the QC shapefiles under an ASCII directory name and
   renames them back at runtime (see `app/FindMyRiding/RidingData.cs`). Keep the
   real directory name as-is.
+
+## Contribution Policy
+
+Contributions to this project are welcome, both from humans and our AI friends!
+Please send your pull requests to the `dev` branch of this repository, which represent
+the upstream of `main`, the current release version. Previous release versions are frozen
+as branches named `release-vX.Y.Z`. 
+
+## License
+
+The licenses of the `CanadaRidingTagger` library and the `FindMyRiding` app are
+not the same; they can each be found in the `LICENSE` file in their respective folders. The
+licenses for third-party libraries and data products can be found in the `THIRD_PARTY` 
+files, also in their respective folders in the monorepo.
