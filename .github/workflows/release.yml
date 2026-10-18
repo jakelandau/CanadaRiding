@@ -1,0 +1,65 @@
+name: release
+
+on:
+  push:
+    tags: [v*]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      # Full history so MinVer sees the v* tag it versioning from; without
+      # this it silently falls back to 0.2.0-alpha.
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - uses: android-actions/setup-android@v3
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+
+      - run: dotnet workload install maui-android
+
+      - run: dotnet pack lib/CanadaRidingTagger/CanadaRidingTagger.csproj -c Release
+
+      - name: Restore keystore
+        run: echo "${{ secrets.ANDROID_KEYSTORE_BASE64 }}" | base64 -d > keystore.jks
+
+      # Release config enables AOT (see csproj).
+      - run: >
+          dotnet build app/FindMyRiding/FindMyRidingApp.csproj -c Release
+          -p:AndroidKeyStore=true
+          -p:AndroidSigningKeyStore=keystore.jks
+          -p:AndroidSigningKeyAlias=${{ secrets.ANDROID_KEY_ALIAS }}
+          -p:AndroidKeyStorePassword=${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          -p:AndroidSigningKeyPass=${{ secrets.ANDROID_KEY_PASSWORD }}
+        shell: bash
+
+      - name: Restore keystore
+        run: echo "${{ secrets.ANDROID_KEYSTORE_BASE64 }}" | base64 -d > keystore.jks
+
+      # Trusted publishing: mints a short-lived token from the repo's
+      # `nugetdotnet` federated service — no API key stored in secrets.
+      - uses: nuget/set-nuget-oidc-token@v1
+
+      - run: >
+          dotnet nuget push lib/CanadaRidingTagger/bin/Release/*.nupkg
+          --source https://api.nuget.org/v3/index.json
+          --skip-duplicate
+        shell: bash
+
+      - uses: softprops/action-gh-release@v4
+        with:
+          files: |
+            lib/CanadaRidingTagger/bin/Release/*.nupkg
+            app/FindMyRiding/bin/Release/net10.0-android/com.findmyriding.app-Signed.apk
+          generate_release_notes: true
