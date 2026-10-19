@@ -9,9 +9,11 @@ jobs:
   lib:
     runs-on: ubuntu-latest
     steps:
-      # Hosted runners ship git-lfs, so the LFS shapefiles in data/ are
-      # smudged automatically on checkout.
+      # lfs: true pulls the shapefile/KML objects in data/ — without it,
+      # actions/checkout leaves the 130-byte LFS pointers in place.
       - uses: actions/checkout@v4
+        with:
+          lfs: true
 
       - uses: actions/setup-dotnet@v4
         with:
@@ -30,6 +32,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          lfs: true
 
       - uses: actions/setup-java@v4
         with:
