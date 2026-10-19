@@ -49,7 +49,7 @@ jobs:
       - run: >
           dotnet build app/FindMyRiding/FindMyRidingApp.csproj -c Release
           -p:AndroidKeyStore=true
-          -p:AndroidSigningKeyStore=keystore.jks
+          -p:AndroidSigningKeyStore="$GITHUB_WORKSPACE/keystore.jks"
           -p:AndroidSigningKeyAlias=${{ secrets.ANDROID_KEY_ALIAS }}
           -p:AndroidKeyStorePassword=${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
           -p:AndroidSigningStorePass=${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
