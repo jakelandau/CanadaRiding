@@ -36,7 +36,17 @@ jobs:
           distribution: temurin
           java-version: 17
 
+      # Explicit packages: the action's default list includes `tools`, which
+      # the runner already has and which then fails the install. android-36
+      # and build-tools 36.0.0 are the exact versions the build resolves
+      # (AndroidSdkPlatformVersion / AndroidSdkBuildToolsVersion).
       - uses: android-actions/setup-android@v3
+        with:
+          accept-android-sdk-licenses: true
+          packages: |
+            platform-tools
+            platforms;android-36
+            build-tools;36.0.0
 
       - uses: actions/setup-dotnet@v4
         with:
