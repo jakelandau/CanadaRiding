@@ -9,6 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      id-token: write
     steps:
       # Full history so MinVer sees the v* tag it versioning from; without
       # this it silently falls back to 0.2.0-alpha.
@@ -21,7 +22,17 @@ jobs:
           distribution: temurin
           java-version: 17
 
+      # Explicit packages: the action's default list includes `tools`, which
+      # the runner already has and which then fails the install. android-36
+      # and build-tools 36.0.0 are the exact versions the build resolves
+      # (AndroidSdkPlatformVersion / AndroidSdkBuildToolsVersion).
       - uses: android-actions/setup-android@v3
+        with:
+          accept-android-sdk-licenses: true
+          packages: |
+            platform-tools
+            platforms;android-36
+            build-tools;36.0.0
 
       - uses: actions/setup-dotnet@v4
         with:
@@ -44,20 +55,24 @@ jobs:
           -p:AndroidSigningKeyPass=${{ secrets.ANDROID_KEY_PASSWORD }}
         shell: bash
 
-      - name: Restore keystore
-        run: echo "${{ secrets.ANDROID_KEYSTORE_BASE64 }}" | base64 -d > keystore.jks
-
-      # Trusted publishing: mints a short-lived token from the repo's
-      # `nugetdotnet` federated service — no API key stored in secrets.
-      - uses: nuget/set-nuget-oidc-token@v1
+      # Trusted publishing: exchange the GitHub OIDC token for a short-lived
+      # NuGet API key — no long-lived key in secrets. Requires the
+      # `NUGET_USER` secret (nuget.org profile name) and a trusted-publishing
+      # policy on nuget.org for this repo's release.yml workflow.
+      - name: NuGet login (OIDC)
+        uses: NuGet/login@v1
+        id: login
+        with:
+          user: ${{ secrets.NUGET_USER }}
 
       - run: >
           dotnet nuget push lib/CanadaRidingTagger/bin/Release/*.nupkg
+          --api-key ${{ steps.login.outputs.NUGET_API_KEY }}
           --source https://api.nuget.org/v3/index.json
           --skip-duplicate
         shell: bash
 
-      - uses: softprops/action-gh-release@v4
+      - uses: softprops/action-gh-release@v3
         with:
           files: |
             lib/CanadaRidingTagger/bin/Release/*.nupkg
