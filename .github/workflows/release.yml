@@ -44,13 +44,15 @@ jobs:
       - name: Restore keystore
         run: echo "${{ secrets.ANDROID_KEYSTORE_BASE64 }}" | base64 -d > keystore.jks
 
-      # Release config enables AOT (see csproj).
+      # Release config enables AOT (see csproj). SDK 36's signing targets read
+      # AndroidSigningStorePass; AndroidKeyStorePassword alone is not mapped to it.
       - run: >
           dotnet build app/FindMyRiding/FindMyRidingApp.csproj -c Release
           -p:AndroidKeyStore=true
           -p:AndroidSigningKeyStore=keystore.jks
           -p:AndroidSigningKeyAlias=${{ secrets.ANDROID_KEY_ALIAS }}
           -p:AndroidKeyStorePassword=${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          -p:AndroidSigningStorePass=${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
           -p:AndroidSigningKeyPass=${{ secrets.ANDROID_KEY_PASSWORD }}
         shell: bash
 
